@@ -1,0 +1,48 @@
+.App {
+  background-color: #222126;
+  display: grid;
+  grid-template-columns: 1fr 2fr 4fr;
+  grid-template-rows: 55px 2fr 4fr;
+
+  grid-template-areas:
+  "h h h"
+  "m a b"
+  "m f f";
+
+  grid-gap: 5px;
+
+}
+.head{
+  grid-area: h;
+ position: fixed;
+  background-color: #333335;
+
+ width: 100%;
+
+}
+.ava{
+  grid-area: a;
+  border-radius: 7px;
+  background-color: white;
+}
+.mai{
+  grid-area: m;
+  background-color: #333335;
+  border-radius: 7px;
+  margin-left: 4px;
+}
+.bod{
+  grid-area: b;
+
+   background-image: url(https://i.ytimg.com/vi/fADEZJLU5Fs/maxresdefault.jpg);
+   background-size: auto;
+    border-radius: 7px;
+    margin-right: 4px;
+}
+.foot{
+  grid-area: f;
+
+  background-color: #333335;
+  border-radius: 7px;
+  margin-right: 4px;
+}
