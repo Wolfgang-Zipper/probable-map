@@ -5,7 +5,7 @@ const Avatar = ( ) =>{
     <div className="ava">
     <ul>
     <div>
-    Тут будет авка димона
+    Тут будет авка Димона
     </div>
     </ul>
 
