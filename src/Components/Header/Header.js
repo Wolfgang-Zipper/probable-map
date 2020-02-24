@@ -1,8 +1,8 @@
 import React from 'react';
-
+import s from './Header.module.css'
 const Header = ( ) =>{
   return(
-    <div className='head'>
+    <div className={s.head}>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,0 +1,8 @@
+.bod{
+  grid-area: b;
+
+   background-color: white;
+   background-size: auto;
+    border-radius: 7px;
+    margin-right: 4px;
+}

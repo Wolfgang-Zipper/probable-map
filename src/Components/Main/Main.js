@@ -1,8 +1,8 @@
 import React from 'react';
-
+import s from './Main.module.css'
 const Main = ( ) =>{
   return(
-    <div className='mai'>
+    <div className={s.mai}>
     <ul>
     <a href="#">Home</a>
     <a href="#">News feed</a>
@@ -58,7 +58,7 @@ const Main = ( ) =>{
     <a href="#">News feed</a>
     <a href="#">Messages</a>
     </ul>
-    
+
     </div>
   )
 }
