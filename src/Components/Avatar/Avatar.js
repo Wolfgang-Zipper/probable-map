@@ -1,12 +1,10 @@
 import React from 'react';
-
+import s from './Avatar.module.css'
 const Avatar = ( ) =>{
   return(
-    <div className="ava">
+    <div className={s.ava}>
     <ul>
-    <div>
-    Тут будет авка Димона
-    </div>
+    Avatar
     </ul>
 
 

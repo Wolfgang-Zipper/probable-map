@@ -20,11 +20,7 @@
  width: 100%;
 
 }
-.ava{
-  grid-area: a;
-  border-radius: 7px;
-  background-color: white;
-}
+
 .mai{
   grid-area: m;
   background-color: #333335;

@@ -5,7 +5,7 @@ import Header from './Components/Header.js';
 import Footer from './Components/Footer.js';
 import Main from './Components/Main.js';
 import Body from './Components/Body.js';
-import Avatar from './Components/Avatar.js';
+import Avatar from './Components/Avatar/Avatar.js';
 
 const App = () => {
   return (
