@@ -4,7 +4,9 @@ const Avatar = ( ) =>{
   return(
     <div className="ava">
     <ul>
-    Avatar
+    <div>
+    Тут будет авка димона
+    </div>
     </ul>
 
 
