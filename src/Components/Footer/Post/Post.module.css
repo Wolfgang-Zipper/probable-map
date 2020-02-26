@@ -1,0 +1,14 @@
+.post{
+  grid-area: p;
+
+  background-color: white;
+  border-radius: 7px ;
+  margin-right: 4px;
+}
+.post img{
+border-radius: 50px;
+margin: 10px;
+}
+.post_header{
+  
+}

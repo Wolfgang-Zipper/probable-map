@@ -1,14 +1,38 @@
 .App {
   background-color: grey;
   display: grid;
-  grid-template-columns: auto 1fr 2fr 4fr auto;
-  grid-template-rows: 55px 2fr 4fr;
+  grid-template-columns: auto 1.3fr 2fr 4fr auto;
+  grid-template-rows: 55px 600px auto;
 
   grid-template-areas:
-  ". h h h ."
+  ". . . . ."
   ". m a b ."
   ". m f f .";
 
   grid-gap: 5px;
 
+
+}
+
+.content{
+  margin-left: auto;
+  margin-right: auto;
+  width: 1137px;
+
+}
+
+.back{
+  background: grey;
+}
+
+.navbar-brand{
+  float: left;
+}
+
+.collapse .navbar-collapse {
+  float: left;
+}
+
+.form-inline{
+  float: left;
 }

@@ -9,15 +9,16 @@ import Avatar from './Components/Avatar/Avatar.js';
 
 const App = () => {
   return (
-    <div className='App'>
-    <Header />
+    <div className='back'>
 
-    <Avatar />
-      <Main />
-    <Body/>
-    <Footer/>
-
-      </div>
+        <Header />
+        <div className='App content'>
+        <Avatar />
+        <Main />
+        <Body/>
+        <Footer/>
+    </div>
+    </div>
   );
 }
 
