@@ -2,9 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header.js';
-import Footer from './Components/Footer/Footer.js';
 import Main from './Components/Main/Main.js';
-import Body from './Components/Body/Body.js';
+import Body from './Components/Footer/Body.js';
+import Info from './Components/Info/Info.js';
 import Avatar from './Components/Avatar/Avatar.js';
 
 const App = () => {
@@ -15,8 +15,8 @@ const App = () => {
         <div className='App content'>
         <Avatar />
         <Main />
+        <Info/>
         <Body/>
-        <Footer/>
     </div>
     </div>
   );

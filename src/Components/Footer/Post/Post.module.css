@@ -3,12 +3,17 @@
 
   background-color: white;
   border-radius: 7px ;
-  margin-right: 4px;
+  margin-bottom: 4px;
 }
 .post img{
 border-radius: 50px;
-margin: 10px;
+margin: 11px;
 }
 .post_header{
-  
+
+}
+.like{
+  margin-right: 5px ;
+  float: right;
+
 }

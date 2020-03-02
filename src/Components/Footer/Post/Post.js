@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Post.module.css'
-const Post = ( ) =>{
+const Post = (props) =>{
   return(
     <div className={s.post}>
       <div className={s.post_header}>
@@ -14,6 +14,9 @@ const Post = ( ) =>{
         </div>
       <div className={s.post_body}>
       Текст поста
+      <div className={s.like} >
+      <i class="far fa-heart"> {props.like}</i>
+      </div>
       </div>
     </div>
   )

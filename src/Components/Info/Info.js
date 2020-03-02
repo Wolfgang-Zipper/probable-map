@@ -1,8 +1,8 @@
 import React from 'react';
-import s from './Body.module.css'
-const Body = ( ) =>{
+import s from './Info.module.css'
+const Info = ( ) =>{
   return(
-    <div className={s.bod}>
+    <div className={s.inf}>
     <ul>
     <a href="#">Home</a>
     <a href="#">News feed</a>
@@ -13,4 +13,4 @@ const Body = ( ) =>{
     </div>
   )
 }
-export default Body;
+export default Info;
