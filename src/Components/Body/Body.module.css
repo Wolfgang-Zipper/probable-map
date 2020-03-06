@@ -1,0 +1,17 @@
+
+.bod{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  grid-gap: 5px;
+  grid-template-areas:
+  "a i "
+  "p p";
+
+  position: grid;
+  grid-area: f;
+
+
+  border-radius: 7px;
+  margin-right: 4px;
+}

@@ -1,62 +1,13 @@
 import React from 'react';
-import s from './Main.module.css'
+import s from './Main.module.css';
+import {NavLink} from "react-router-dom";
 const Main = ( ) =>{
   return(
     <div className={s.mai}>
     <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
+    <li><NavLink to="/Dialogs">Messages</NavLink></li>
+    <li><NavLink to="/Body">Body</NavLink></li>
+    <li><a href="#">as</a></li>
     </ul>
 
     </div>

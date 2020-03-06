@@ -1,6 +1,6 @@
 .inf{
-  grid-area: b;
-
+  grid-area: i;
+  position:grid;
    background-color: white;
    background-size: auto;
     border-radius: 7px;

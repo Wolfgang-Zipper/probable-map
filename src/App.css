@@ -1,19 +1,22 @@
 .App {
-  background-color: grey;
+  background-color: rgb(227, 227, 227);
   display: grid;
-  grid-template-columns: auto 1.3fr 2fr 4fr auto;
+  grid-template-columns: auto 1.3fr 4fr auto;
   grid-template-rows: 55px 600px auto;
 
   grid-template-areas:
-  ". . . . ."
-  ". m a b ."
-  ". m f f .";
+  ". . . ."
+  ". m r ."
+  ". m r .";
 
   grid-gap: 5px;
 
 
 }
-
+.route_content{
+  position: grid;
+  grid-area: r;
+}
 .content{
   margin-left: auto;
   margin-right: auto;
@@ -22,7 +25,7 @@
 }
 
 .back{
-  background: grey;
+  background: rgb(227, 227, 227);
 }
 
 .navbar-brand{

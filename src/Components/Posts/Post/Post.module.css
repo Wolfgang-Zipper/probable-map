@@ -1,0 +1,19 @@
+.post{
+  grid-area: p;
+
+  background-color: white;
+  border-radius: 7px ;
+  margin-bottom: 4px;
+}
+.post img{
+border-radius: 50px;
+margin: 11px;
+}
+.post_header{
+
+}
+.like{
+  margin-right: 5px ;
+  float: right;
+
+}

@@ -1,5 +1,11 @@
+
+
+
+
+
 .bod{
-  grid-area: f;
+  position: grid;
+  grid-area: p;
 
 
   border-radius: 7px;
