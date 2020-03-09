@@ -12,8 +12,8 @@ const Body = (props) =>{
     </div>
     <Avatar name="Сергей Зеленский"/>
     <Info/>
-    <Posts addPost={props.addPost} postDate={props.postDate}/>
+    <Posts addnewPost={props.addnewPost} postDate={props.postDate}/>
     </div>
   )
-}
+};
 export default Body;

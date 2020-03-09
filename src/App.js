@@ -8,7 +8,7 @@ import Friends from './Components/Friends/Friends.jsx';
 
 import Body from './Components/Body/Body.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {addPost} from "./Redux/State";
+
 
 const App = (props) => {
   return (
@@ -18,7 +18,7 @@ const App = (props) => {
         <div className='App content'>
           <Main />
             <div className='route_content'>
-            <Route path="/Body" render={ () => <Body addPost={props.addPost} friendsData={props.appData.friendsData} postDate={props.appData.postDate}/>} />
+            <Route path="/Body" render={ () => <Body addnewPost={props.addnewPost} friendsData={props.appData.friendsData} postDate={props.appData.postDate}/>} />
             <Route path="/Dialogs_main" render={ () => <Dialogs_main messagesData={props.appData.Dialogs_main.messagesData} dialogsData={props.appData.Dialogs_main.dialogsData} />} />
             <Route path="/Friends" render={ () => <Friends friendsData={props.appData.friendsData}/>} />
             </div>

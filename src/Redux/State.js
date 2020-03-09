@@ -1,3 +1,6 @@
+import {rerenderTree} from "../rerender";
+
+
 let state = {
     Dialogs_main: {
         dialogsData: [
@@ -33,16 +36,20 @@ let state = {
 
 };
 
-export let addPost = (NewPostElement) => {
+export let addnewPost = (postMessage) => {
+    debugger;
     let newPost = {
         id: 7,
         name: 'Семен',
         post_date: '29.12.2020',
-        post_text: 'Телега лучше',
+        post_text: postMessage,
         like: 0
 
     };
+
     state.postDate.push(newPost);
-}
+    rerenderTree(state);
+
+};
 
 export default state;
