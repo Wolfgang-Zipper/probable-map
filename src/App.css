@@ -1,7 +1,26 @@
+html{
+font-family: Tahoma;
+}
+a {
+  color: black !important;
+}
+li {
+  list-style-type: none; /* Убираем маркеры */
+}
+ul {
+  margin-left: 0; /* Отступ слева в браузере IE и Opera */
+  padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+.navbar-brand{
+  opacity: 0.5;
+  padding: 0px !important;
+  margin-left: 32px;
+  margin-right: 40px!important;
+}
 .App {
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(249, 249, 249);
   display: grid;
-  grid-template-columns: auto 1.3fr 4fr auto;
+  grid-template-columns: auto 0.7fr 4fr auto;
   grid-template-rows: 55px 600px auto;
 
   grid-template-areas:
@@ -17,6 +36,7 @@
   position: grid;
   grid-area: r;
 }
+
 .content{
   margin-left: auto;
   margin-right: auto;
@@ -25,7 +45,7 @@
 }
 
 .back{
-  background: rgb(227, 227, 227);
+  background-color: rgb(249, 249, 249);
 }
 
 .navbar-brand{
