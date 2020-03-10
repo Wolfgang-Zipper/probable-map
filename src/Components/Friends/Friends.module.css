@@ -1,0 +1,13 @@
+.bod {
+    grid-area: fr;
+
+
+    margin-right: 4px;
+}
+
+.header_info {
+    float: left;
+    width: 102%;
+    margin-bottom: 5px;
+    background-color: white;
+}

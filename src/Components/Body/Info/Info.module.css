@@ -1,0 +1,8 @@
+.inf{
+  grid-area: i;
+  position:grid;
+   background-color: white;
+   background-size: auto;
+  
+    margin-right: 4px;
+}

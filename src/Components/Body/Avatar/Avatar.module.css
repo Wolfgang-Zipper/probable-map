@@ -1,0 +1,15 @@
+.ava{
+  grid-area: a;
+
+  background-color: white;
+}
+.ava img{
+  width: 300px;
+  padding: 5px;
+}
+.name{
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  background-color: white;
+}

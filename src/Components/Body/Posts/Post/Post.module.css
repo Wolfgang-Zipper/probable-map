@@ -1,0 +1,31 @@
+.post{
+  grid-area: p;
+ padding: 13px;
+  background-color: white;
+  min-height: 100px;
+
+  margin-bottom: 4px;
+}
+.post img{
+border-radius: 50px;
+
+}
+.post_header_img{
+    float: left;
+}
+.post_header{
+
+width: 100%;
+}
+.post_body{
+
+}
+.post_header_info{
+
+  float: left;
+}
+.like{
+  margin-right: 5px ;
+  float: right;
+
+}

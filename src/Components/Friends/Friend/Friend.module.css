@@ -1,0 +1,16 @@
+.body{
+  grid-area: p;
+  margin-bottom: 5px;
+  float: left;
+  background-color: white;
+  width: 102%;
+}
+.body img{
+width: 37px;
+border-radius: 50px;
+margin: 11px;
+float: left;
+}
+.header{
+  float: left;
+}

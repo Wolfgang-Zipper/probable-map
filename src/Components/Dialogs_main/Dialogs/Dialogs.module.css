@@ -1,0 +1,20 @@
+.post{
+  grid-area: dial;
+  position: grid;
+  background-color: white;
+  background: #f7f7f7;
+  margin-bottom: 4px;
+  margin: 10px;
+}
+.post img{
+border-radius: 50px;
+margin: 11px;
+}
+.post_header{
+
+}
+.like{
+  margin-right: 5px ;
+  float: right;
+
+}

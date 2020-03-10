@@ -1,0 +1,16 @@
+.bod{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 60px;
+  grid-template-areas:
+  "dial mess"
+  "dial in";
+  grid-gap: 5px;
+  grid-area: d;
+
+  background: white;
+  min-height: 800px;
+
+  margin-right: 4px;
+}
+ 
