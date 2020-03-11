@@ -18,9 +18,9 @@ const App = (props) => {
         <div className='App content'>
           <Main />
             <div className='route_content'>
-            <Route path="/Body" render={ () => <Body addnewPost={props.addnewPost} friendsData={props.appData.friendsData} postDate={props.appData.postDate}/>} />
+            <Route path="/Body" render={ () => <Body changeText={props.changeText} newPostText={props.appData.Body.newPostText} addnewPost={props.addnewPost} friendsData={props.appData.Body.friendsData} postDate={props.appData.Body.postDate}/>} />
             <Route path="/Dialogs_main" render={ () => <Dialogs_main messagesData={props.appData.Dialogs_main.messagesData} dialogsData={props.appData.Dialogs_main.dialogsData} />} />
-            <Route path="/Friends" render={ () => <Friends friendsData={props.appData.friendsData}/>} />
+            <Route path="/Friends" render={ () => <Friends friendsData={props.appData.Body.friendsData}/>} />
             </div>
         </div>
       </div>
