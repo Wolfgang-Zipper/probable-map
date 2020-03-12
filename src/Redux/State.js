@@ -1,5 +1,7 @@
-import {rerenderTree} from "../rerender";
 
+let rerenderTree = () => {
+
+}
 
 let state = {
   Dialogs_main: {
@@ -91,6 +93,9 @@ export let changeMessText = (textMessage) => {
   rerenderTree(state); //перерисовываем страницу для отображения внесенных изменений
 };
 
+export const subscribe = (observer) =>{
+  rerenderTree = observer;
+}
 
 
 export default state;
