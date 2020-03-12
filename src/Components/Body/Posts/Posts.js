@@ -9,18 +9,16 @@ const Posts = (props) => {
     let NewPostElement = React.createRef();
     let addPost = () => {
         let text = NewPostElement.current.value;
-        props.addnewPost(text); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
-        props.changeText('');
+        props.addnewPost(); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
+
     };
     let onChangePost = () => {
       let text = NewPostElement.current.value;
-      props.changeText(text);// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
+      props.changePostText(text);// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
     };
     return (
         <div className={s.bod}>
             <div сlassName={s.create_post}>
-
-
                 <div className="input-group mb-3">
                     <input ref={NewPostElement} onChange={onChangePost} value={props.newPostText} type="text" className="form-control" />
 

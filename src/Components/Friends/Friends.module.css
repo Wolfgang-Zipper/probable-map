@@ -6,8 +6,12 @@
 }
 
 .header_info {
-    float: left;
-    width: 102%;
-    margin-bottom: 5px;
+    width: 100px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0px 7px;
+    margin-bottom: 4px;
     background-color: white;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -9,12 +9,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '@fortawesome/fontawesome-free/css/all.css';
 import * as serviceWorker from './serviceWorker';
 
-import {addnewPost, changeText} from './Redux/State.js';
+import {addnewPost, changePostText, changeMessText, addnewMess} from './Redux/State.js';
 
 
 export let rerenderTree = (state) => {
 
-    ReactDOM.render(<App appData={state} changeText={changeText} addnewPost={addnewPost}/>, document.getElementById('root'));
+    ReactDOM.render(<App appData={state} changeMessText={changeMessText} changePostText={changePostText} addnewMess={addnewMess} addnewPost={addnewPost}/>, document.getElementById('root'));
 };
 
 // If you want your app to work offline and load faster, you can change

@@ -18,7 +18,7 @@ ul {
   margin-right: 40px!important;
 }
 .App {
-  background-color: rgb(249, 249, 249);
+  background-color: #a5a4a4;
   display: grid;
   grid-template-columns: auto 0.7fr 4fr auto;
   grid-template-rows: 55px 600px auto;
@@ -45,7 +45,7 @@ ul {
 }
 
 .back{
-  background-color: rgb(249, 249, 249);
+  background-color: #a5a4a4;
 }
 
 .navbar-brand{

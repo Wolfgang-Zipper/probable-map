@@ -4,9 +4,10 @@
   float: left;
   background-color: white;
   width: 102%;
+  border-radius: 15px;
 }
 .body img{
-width: 37px;
+width: 45px;
 border-radius: 50px;
 margin: 11px;
 float: left;
