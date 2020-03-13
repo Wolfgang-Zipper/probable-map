@@ -11,6 +11,10 @@ ul {
   margin-left: 0; /* Отступ слева в браузере IE и Opera */
   padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
 }
+.form-control{
+  border-radius: 12px ;
+}
+
 .navbar-brand{
   opacity: 0.5;
   padding: 0px !important;

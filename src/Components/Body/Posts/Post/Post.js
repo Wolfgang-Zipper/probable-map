@@ -6,8 +6,13 @@ const Post = (props) =>{
       <div className={s.post_header}>
         <img className={s.post_header_img} src="https://sun1-84.userapi.com/c855416/v855416401/1ca372/wl_fgfKGcuw.jpg?ava=1"/>
         <div className={s.post_header_info}>
-        {props.name}
-          {props.post_date}
+              <div className={s.name_inner}>
+              {props.name}
+              </div>
+                    <div className={s.post_date}>
+                    {props.post_date}
+                    </div>
+
         </div>
         </div> <br/>
       <div className={s.post_body}>

@@ -19,11 +19,11 @@ const Posts = (props) => {
     return (
         <div className={s.bod}>
             <div сlassName={s.create_post}>
-                <div className="input-group mb-3">
-                    <input ref={NewPostElement} onChange={onChangePost} value={props.newPostText} type="text" className="form-control" />
+                <div className="input-group mb-1">
+                    <input ref={NewPostElement} onChange={onChangePost} value={props.newPostText} type="text" className={s.formcontrol} />
 
                     <div className="input-group-append">
-                        <button onClick={addPost} className="btn btn-outline-secondary" type="button"
+                        <button onClick={addPost} className={s.btn_outline_secondary} type="button"
                                 id="button-addon2">Button
                         </button>
                     </div>
