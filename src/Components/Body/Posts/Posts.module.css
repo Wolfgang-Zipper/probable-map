@@ -1,14 +1,22 @@
-
-
-
-
-
+.formcontrol{
+  border-radius: 12px ;
+  border: none;
+  width: 100%;
+  flex: 1 1;
+  padding: 10px;
+  margin-right: 5px;
+}
+.btn_outline_secondary{
+  border-radius: 12px ;
+  border: none;
+}
 .bod{
   position: grid;
   grid-area: p;
 
-
-  
+  background-color: rgb(255,255,255, 0.7);
+  padding: 5px;
+  border-radius: 12px;
   margin-right: 4px;
 }
 .create_post{

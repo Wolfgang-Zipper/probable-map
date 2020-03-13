@@ -1,6 +1,7 @@
 .mai{
   grid-area: m;
-  background-color: white;
+  background-color: rgb(255,255,255, 0.7);
+  
   border-radius: 15px;
   margin-left: 4px;
   padding: 20px;
