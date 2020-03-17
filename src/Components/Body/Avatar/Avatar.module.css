@@ -2,18 +2,19 @@
   grid-area: a;
   border-radius: 15px;
   background-color: white;
-  background-color: rgb(255,255,255, 0.7);
-  padding: 5px;
+  background-color: rgb(255,255,255, 0.4);
 }
 .ava img{
-  width: 300px;
-  padding: 5px;
+  width: auto;
+  height: 500px;
   border-radius: 15px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
 }
 .name{
   text-align: center;
-  
-  width: 100%;
-  border-radius: 15px;
   background-color: white;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+
 }

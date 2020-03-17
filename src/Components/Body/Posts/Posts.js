@@ -3,18 +3,19 @@ import s from './Posts.module.css'
 import Post from './Post/Post.js'
 
 const Posts = (props) => {
+
     // функц. компонент posts преобразовывает массив из props в компонент с атрибутами посредством метода map();
     let posts = props.postDate.map(post => <Post id={post.id} name={post.name} post_date={post.post_date}
                                                  post_text={post.post_text} like={post.like}/>);
     let NewPostElement = React.createRef();
     let addPost = () => {
         let text = NewPostElement.current.value;
-        props.addnewPost(); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
+        props.dispatch({type:'addnewPost'}); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
 
     };
     let onChangePost = () => {
-      let text = NewPostElement.current.value;
-      props.changePostText(text);// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
+      let text = NewPostElement.current.value;//значение в input
+      props.dispatch({type:'changePostText', textMessage:text});// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
     };
     return (
         <div className={s.bod}>
@@ -29,9 +30,9 @@ const Posts = (props) => {
                     </div>
                 </div>
             </div>
-
+              <div сlassName={s.create_posts}>
             {posts}
-
+            </div>
         </div>
     )
 };

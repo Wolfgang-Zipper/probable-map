@@ -12,7 +12,7 @@ const Body = (props) =>{
     </div>
     <Avatar name="Сергей Зеленский"/>
     <Info/>
-    <Posts changePostText={props.changePostText} newPostText={props.newPostText} addnewPost={props.addnewPost} postDate={props.postDate}/>
+    <Posts  newPostText={props.newPostText} dispatch={props.dispatch} postDate={props.postDate}/>
     </div>
   )
 };

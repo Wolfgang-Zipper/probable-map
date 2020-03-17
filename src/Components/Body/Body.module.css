@@ -1,11 +1,11 @@
 
 .bod{
   display: grid;
-  grid-template-columns: 1.5fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr auto;
   grid-gap: 5px;
   grid-template-areas:
-  "fr a i "
+  "a i fr "
   "p p p";
 
   position: grid;
@@ -17,8 +17,8 @@
 }
 .frend{
 
-  background-color: rgb(255,255,255, 0.7);
+  background-color: rgb(255,255,255, 0.4);
   padding: 5px;
-  border-radius: 12px;
+  border-radius: 15px;
   max-height: 100%;
 }

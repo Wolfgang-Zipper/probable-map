@@ -9,17 +9,15 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '@fortawesome/fontawesome-free/css/all.css';
 import * as serviceWorker from './serviceWorker';
-import state from './Redux/State.js';
-import {addnewPost, changePostText, changeMessText, addnewMess, subscribe} from './Redux/State.js';
+import store from './Redux/State.js';
+
 
 
 export let rerenderTree = () => {
-
-    ReactDOM.render(<App appData={state} changeMessText={changeMessText} changePostText={changePostText} addnewMess={addnewMess} addnewPost={addnewPost}/>, document.getElementById('root'));
+    // метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store", так как при передаче функций через props мы получаем ошибку, store undefined (функция находится в props, а не в store)
+    ReactDOM.render(<App appData={store.getState()} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
+    
 };
-rerenderTree();
-subscribe(rerenderTree);
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store"
+rerenderTree(store.getState());
+store.subscribe(rerenderTree);

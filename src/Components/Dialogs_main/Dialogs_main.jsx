@@ -9,7 +9,7 @@ const Dialogs_main = (props) =>{
     <BrowserRouter>
     <div className={s.bod}>
     <Dialogs dialogsData={props.dialogsData}/>
-    <Messages addnewMess={props.addnewMess} newMessText={props.newMessText} changeMessText={props.changeMessText} messagesData={props.messagesData} />
+    <Messages dispatch={props.dispatch} newMessText={props.newMessText}  messagesData={props.messagesData} />
     </div>
     </BrowserRouter>
   )

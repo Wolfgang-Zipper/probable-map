@@ -13,19 +13,28 @@ import {BrowserRouter, Route} from 'react-router-dom';
 const App = (props) => {
   return (
     <BrowserRouter>
-      <div className='back'>
-        <Header />
-        <div className='App content'>
-          <Main />
-            <div className='route_content'>
-            <Route path="/Body" render={ () => <Body changePostText={props.changePostText} newPostText={props.appData.Body.newPostText} addnewPost={props.addnewPost} friendsData={props.appData.Body.friendsData} postDate={props.appData.Body.postDate}/>} />
-            <Route path="/Dialogs_main" render={ () => <Dialogs_main addnewMess={props.addnewMess} newMessText={props.appData.Dialogs_main.newMessText} changeMessText={props.changeMessText} messagesData={props.appData.Dialogs_main.messagesData} dialogsData={props.appData.Dialogs_main.dialogsData} />} />
-            <Route path="/Friends" render={ () => <Friends friendsData={props.appData.Body.friendsData}/>} />
-            </div>
-        </div>
+    <div className='back'>
+    <Header />
+    <div className='App content'>
+    <Main />
+    <div className='route_content'>
+    <Route path="/Body" render={ () => <Body
+        dispatch={props.dispatch}
+        newPostText={props.appData.Body.newPostText}
+        friendsData={props.appData.Body.friendsData}
+        postDate={props.appData.Body.postDate}/>} />
+    <Route path="/Dialogs_main" render={ () => <Dialogs_main
+        dispatch={props.dispatch}
+        newMessText={props.appData.Dialogs_main.newMessText}
+        messagesData={props.appData.Dialogs_main.messagesData}
+        dialogsData={props.appData.Dialogs_main.dialogsData} />} />
+    <Route path="/Friends" render={ () => <Friends
+        friendsData={props.appData.Body.friendsData}/>} />
       </div>
-    </BrowserRouter>
-  );
-};
+      </div>
+      </div>
+      </BrowserRouter>
+    );
+  };
 
-export default App;
+  export default App;

@@ -14,11 +14,12 @@
   position: grid;
   grid-area: p;
 
-  background-color: rgb(255,255,255, 0.7);
+  background-color: rgb(255,255,255, 0.4);
   padding: 5px;
   border-radius: 12px;
   margin-right: 4px;
 }
-.create_post{
-
+.create_posts{
+  display: flex;
+    flex-direction: column-reverse;
 }

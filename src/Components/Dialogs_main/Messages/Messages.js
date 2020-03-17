@@ -9,13 +9,13 @@ const Messages = (props) => {
                                                            name={mess.name} text_massage={mess.text_massage}/>);
     let NewTextElement = React.createRef();
     let addPost = () => {
-      props.addnewMess(); //вызов функции, проброшенной через props из "BLL" (добавляет данные сообщения в "state" взятые из того же "state",
+      props.dispatch({type:'addnewMess'}); //вызов функции, проброшенной через props из "BLL" (добавляет данные сообщения в "state" взятые из того же "state",
                           //которые были добавлены туди из функции передачи ввода "onCgangeMess")
     };
 
     let onChangeMess = () => {
       let text = NewTextElement.current.value;
-      props.changeMessText(text);//помещает из поля ввода input значения, 
+      props.dispatch({type:'changeMessText', textMessage:text});//помещает из поля ввода input значения,
     }
     return (
         <BrowserRouter>

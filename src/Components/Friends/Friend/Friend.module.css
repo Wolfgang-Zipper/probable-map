@@ -1,9 +1,10 @@
 .body{
   grid-area: p;
   margin-bottom: 5px;
+
   float: left;
   background-color: white;
-  width: 102%;
+  width: 100%;
   border-radius: 15px;
 }
 .body img{

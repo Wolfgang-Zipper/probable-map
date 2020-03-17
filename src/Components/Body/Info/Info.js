@@ -3,11 +3,9 @@ import s from './Info.module.css'
 const Info = ( ) =>{
   return(
     <div className={s.inf}>
-    <ul>
-    <a href="#">Home</a>
-    <a href="#">News feed</a>
-    <a href="#">Messages</a>
-    </ul>
+    <div className={s.header_info}>
+      Друзья
+    </div>
 
 
     </div>
