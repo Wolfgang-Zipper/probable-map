@@ -1,6 +1,6 @@
 .mai{
   grid-area: m;
-  background-color: rgb(255,255,255, 0.4);
+
 
   border-radius: 15px;
   margin-left: 4px;
@@ -8,21 +8,24 @@
 }
 
 .link {
+  background-color: rgb(255,255,255, 0.4);
   text-decoration: none;
   margin-bottom: 5px;
-  border-radius: 12px;
-  background: white;
-  padding: 0px 5px;
+  border-radius: 5px;
+  opacity: 0.5;
+  padding: 0px 10px;
   width: 100%;
 }
 .link:hover {
+
+  background-color: rgb(255,255,255, 1);
   opacity: 1;
   text-decoration: none;
 }
 .link_inner:hover {
   text-decoration: none;
-  color: rgba(0, 0, 0, 1) !important;
+
 }
 .link_inner{
-  color: rgba(0, 0, 0, 0.4) !important;
+
 }

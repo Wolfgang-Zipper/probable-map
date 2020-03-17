@@ -44,7 +44,7 @@ let store = {
   },
 
 
-  dispatch(action) {
+  dispatch (action) {
     //функция добавления новых данных из функции newPost в state.Body.postDate
     if (action.type === 'addnewPost'){
 

@@ -1,20 +1,20 @@
 .ava{
   grid-area: a;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: white;
   background-color: rgb(255,255,255, 0.4);
 }
 .ava img{
+  padding: 5px;
   width: auto;
   height: 500px;
-  border-radius: 15px;
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
+  border-radius: 10px;
+
 }
 .name{
   text-align: center;
   background-color: white;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 
 }

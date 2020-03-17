@@ -4,7 +4,7 @@ const Info = ( ) =>{
   return(
     <div className={s.inf}>
     <div className={s.header_info}>
-      Друзья
+      Информация
     </div>
 
 

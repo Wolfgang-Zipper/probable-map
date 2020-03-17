@@ -19,6 +19,14 @@
 
   background-color: rgb(255,255,255, 0.4);
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 5px;
   max-height: 100%;
+}
+.header_info {
+  text-align: center;
+  background-color: white;
+  margin: -5px;
+  margin-bottom: 2px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }

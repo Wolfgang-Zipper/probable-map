@@ -22,7 +22,7 @@ ul {
   margin-right: 40px!important;
 }
 .App {
-  background-color: #a5a4a4;
+  background-color: #b7bcca;
   display: grid;
   grid-template-columns: auto 0.7fr 4fr auto;
   grid-template-rows: 55px 600px auto;
@@ -33,7 +33,7 @@ ul {
   ". m r .";
 
   grid-gap: 5px;
-  
+
 
 }
 .route_content{
@@ -49,7 +49,8 @@ ul {
 }
 
 .back{
-  background-color: #a5a4a4;
+  background-color: #b7bcca;
+  min-height: 1072px;
 }
 
 .navbar-brand{

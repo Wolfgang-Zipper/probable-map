@@ -1,6 +1,6 @@
 .body{
   grid-area: p;
-  margin-bottom: 5px;
+  margin: 2px 0px;
 
   float: left;
   background-color: white;
@@ -8,10 +8,11 @@
   border-radius: 15px;
 }
 .body img{
-width: 45px;
-border-radius: 50px;
-margin: 11px;
-float: left;
+  width: 45px;
+  
+  border-radius: 50px;
+  margin: 11px;
+  float: left;
 }
 .header{
   float: left;

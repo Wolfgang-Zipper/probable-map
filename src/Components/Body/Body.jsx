@@ -8,6 +8,9 @@ const Body = (props) =>{
   return(
     <div className={s.bod}>
     <div className={s.frend}>
+    <div className={s.header_info}>
+      Друзья
+    </div>
     <Friends friendsData={props.friendsData}/>
     </div>
     <Avatar name="Сергей Зеленский"/>
