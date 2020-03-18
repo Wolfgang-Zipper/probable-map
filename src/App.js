@@ -5,6 +5,7 @@ import Header from './Components/Header/Header.jsx';
 import Main from './Components/Main/Main.jsx';
 import Dialogs_main from './Components/Dialogs_main/Dialogs_main.jsx';
 import Friends from './Components/Friends/Friends.jsx';
+import Grecha from './Components/Grecha/Grecha.jsx';
 
 import Body from './Components/Body/Body.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
@@ -30,6 +31,7 @@ const App = (props) => {
         dialogsData={props.appData.Dialogs_main.dialogsData} />} />
     <Route path="/Friends" render={ () => <Friends
         friendsData={props.appData.Body.friendsData}/>} />
+        <Route path="/Grecha" render={ () => <Grecha/>} />
       </div>
       </div>
       </div>

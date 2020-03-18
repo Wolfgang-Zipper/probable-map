@@ -18,6 +18,8 @@ const Main = () => {
                     <i class="fas fa-images"/> Фотографии</NavLink></li>
                 <li className={s.link}><NavLink className={s.link_inner} to="/Settings">
                     <i className="fas fa-cog"/> Настройки</NavLink></li>
+                    <li className={s.link}><NavLink className={s.link_inner} to="/Grecha">
+                        <i className="fas fa-cog"/> Настройки</NavLink></li>
             </ul>
 
         </div>

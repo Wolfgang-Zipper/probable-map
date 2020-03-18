@@ -3,19 +3,21 @@ import s from './Messages.module.css';
 import Message from './Message/Message.js';
 import {BrowserRouter, Route} from 'react-router-dom';
 
+import {actionaddPostcreator,actionchangeMessTextcreator} from '../../../Redux/State.js';
+
 const Messages = (props) => {
 
     let messages = props.messagesData.map(mess => <Message id={mess.id} date_massege={mess.date_massege}
                                                            name={mess.name} text_massage={mess.text_massage}/>);
     let NewTextElement = React.createRef();
     let addPost = () => {
-      props.dispatch({type:'addnewMess'}); //вызов функции, проброшенной через props из "BLL" (добавляет данные сообщения в "state" взятые из того же "state",
+      props.dispatch(actionaddPostcreator()); //вызов функции, проброшенной через props из "BLL" (добавляет данные сообщения в "state" взятые из того же "state",
                           //которые были добавлены туди из функции передачи ввода "onCgangeMess")
     };
 
     let onChangeMess = () => {
       let text = NewTextElement.current.value;
-      props.dispatch({type:'changeMessText', textMessage:text});//помещает из поля ввода input значения,
+      props.dispatch(actionchangeMessTextcreator(text));//помещает из поля ввода input значения,
     }
     return (
         <BrowserRouter>

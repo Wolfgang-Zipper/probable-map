@@ -1,6 +1,6 @@
 import dataSet from "./Data.js"
 
-
+const addnewPost = 'addnewPost'; //вынес 
 
 let store = {
 
@@ -46,7 +46,7 @@ let store = {
 
   dispatch (action) {
     //функция добавления новых данных из функции newPost в state.Body.postDate
-    if (action.type === 'addnewPost'){
+    if (action.type === addnewPost){
 
       let newPost = {
         id: 7,
@@ -88,5 +88,15 @@ let store = {
 
 
 
+}
+export const actionaddPostcreator = () => {
+  return {
+  type:'addnewMess'
+}
+}
+export const actionchangeMessTextcreator = (text) => {
+  return {
+  type:'changeMessText', textMessage:text
+}
 }
 export default store;
