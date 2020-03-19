@@ -1,6 +1,6 @@
 import dataSet from "./Data.js"
 
-const addnewPost = 'addnewPost'; //вынес 
+const addnewPost = 'addnewPost'; //вынес
 
 let store = {
 
@@ -99,4 +99,5 @@ export const actionchangeMessTextcreator = (text) => {
   type:'changeMessText', textMessage:text
 }
 }
+
 export default store;
