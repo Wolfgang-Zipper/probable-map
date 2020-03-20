@@ -1,5 +1,36 @@
+.fullscreen-bg {
+  overflow: hidden;
+  z-index: -100;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top:45%;
+}
+
+.fullscreen-bg__video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.overlay  {
+  text-align:center;
+  color:#fff;
+  font-size: 70px;
+  margin-top:226px;
+  background: rgb(0,0,0, 0.8)
+}
+.pattern2 {
+  position: absolute;
+  background-image: repeating-linear-gradient(-45deg, white, white 1px, transparent 1px, transparent 6px);
+  background-size: 4px 4px;
+  z-index: 1;
+  width: 955px;
+  height: 536px;
+}
 html{
-font-family: Tahoma;
+  font-family: Tahoma;
 }
 a {
   color: black !important;

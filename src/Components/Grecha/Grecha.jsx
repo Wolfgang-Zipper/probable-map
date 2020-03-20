@@ -1,45 +1,60 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
+import video from '../../Images/grech.mp4'
 
 class Grecha extends React.Component {
+  var grech = this.state.items.USD.Value;
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+    };
 
-constructor(props){
-  super(props);
-  this.state = {
-    items: [],
-    isLoaded:false
+
   }
-}
 
-  gettingUSD() {
-    fetch('https://www.cbr-xml-daily.ru/daily_json.js')
-        .then(res => res.json())
-
-        .then(json => {
-            this.setState({
-              isLoaded:true,
-              itdems: json,
-            })
-
+  componentDidMount() {
+    fetch("https://www.cbr-xml-daily.ru/daily_json.js")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          items: result.Valute
         });
-debugger;
-
-
+      },
+      // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+      // чтобы не перехватывать исключения из ошибок в самих компонентах.
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
   }
 
   render() {
-    debugger;
-    var {isLoaded, items} = this.state;
-    if (!isLoaded) {
-
-      return <div>Loading...</div>
-    }
-    else {
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Ошибка: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Загрузка...</div>;
+    } else {
       return (
+        <ul >
+        <div className="pattern2">
+        <h1 className="overlay">{this.state.items.USD.Value * 0.89}</h1>
+        </div>
 
-          <div>
-            Data has been loaded
-          </div>
+        <video className="fullscreen-bg__video" loop="loop" autoplay="" muted="">
+        <source src={video} type="video/mp4" />
 
+        </video>
+
+
+        </ul>
       );
     }
   }
