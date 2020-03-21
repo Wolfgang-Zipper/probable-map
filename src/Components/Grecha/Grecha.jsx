@@ -2,7 +2,7 @@ import React, {Component, useState} from 'react';
 import video from '../../Images/grech.mp4'
 
 class Grecha extends React.Component {
-  var grech = this.state.items.USD.Value;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -45,7 +45,8 @@ class Grecha extends React.Component {
       return (
         <ul >
         <div className="pattern2">
-        <h1 className="overlay">{this.state.items.USD.Value * 0.89}</h1>
+        <h1 className="overlay_h">Курс гречи</h1>
+        <h1 className="overlay">{(this.state.items.USD.Value * 0.89).toFixed(2)} ₽</h1>
         </div>
 
         <video className="fullscreen-bg__video" loop="loop" autoplay="" muted="">

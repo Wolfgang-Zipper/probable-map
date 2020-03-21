@@ -1,6 +1,8 @@
-import dataSet from "./Data.js"
 
-const addnewPost = 'addnewPost'; //вынес
+import dialogs_main_redusor from './dialogs_main_redusor.jsx'
+import body_redusor from './body_redusor.jsx'
+
+
 
 let store = {
 
@@ -15,9 +17,9 @@ let store = {
         {id: 4, name: 'Димон'}
       ],
       messagesData: [
-        {id: 1, name: 'Сергей', date_massege: '29.12.2020', text_massage: 'Hello'},
-        {id: 2, name: 'Виталий', date_massege: dataSet(), text_massage: 'Hi'},
-        {id: 3, name: 'Димон', date_massege: '18.12.2019', text_massage: 'ВКонтакте лучше'},
+        {id: 1, name: 'Сергей', date_massege: '21.02.2020 17:09:41', text_massage: 'Hello'},
+        {id: 2, name: 'Виталий', date_massege: '21.02.2020 17:09:41', text_massage: 'Hi'},
+        {id: 3, name: 'Димон', date_massege: '21.02.2020 17:09:41', text_massage: 'ВКонтакте лучше'},
       ],
       newMessText:'123'
     },
@@ -28,7 +30,7 @@ let store = {
         {id: 3, name: 'Димон'}
       ],
       postDate: [
-        {id: 1, name: 'Сергей', post_date: '29.12.2020', post_text: 'Hello', like: 45}
+        {id: 1, name: 'Сергей', post_date: '21.02.2020 17:09:41', post_text: 'Hello', like: 45}
       ],
       newPostText:''
 
@@ -45,59 +47,40 @@ let store = {
 
 
   dispatch (action) {
-    //функция добавления новых данных из функции newPost в state.Body.postDate
-    if (action.type === addnewPost){
-
-      let newPost = {
-        id: 7,
-        name: 'Семен',
-        post_date: dataSet(),
-        post_text: this._state.Body.newPostText,
-        like: 0
-      };
-
-      this._state.Body.postDate.push(newPost);
-      this._state.Body.newPostText=""; //"очищаем" state.Body.newPostText, которое передается в поле ввода UI
-      this._rerenderTree(this._state); //перерисовываем страницу для отображения внесенных изменений
-    }
-    //функция обновления данных "newPostText", которая получает "textMessage" при вызове через props из UI в Posts.js и приравнивает к textMessage
-    else if (action.type === 'changePostText') {
-      this._state.Body.newPostText = action.textMessage;
-      this._rerenderTree(this._state); //перерисовываем страницу для отображения внесенных изменений
-    }
-    //функция добавления новых данных из функции newMess в state.Dialogs_main.newMessText
-    else if (action.type === 'addnewMess'){
-      let newMess = {
-        id: 3,
-        name: 'Димон',
-        date_massege: '18.12.2019',
-        text_massage: this._state.Dialogs_main.newMessText
-      }
-      this._state.Dialogs_main.messagesData.push(newMess);
-      this._state.Dialogs_main.newMessText="";
-      this._rerenderTree(this._state); //перерисовываем страницу для отображения внесенных изменений
-
-    }
-    //функция обновления данных "newMessText", которая получает "textMessage" при вызове через props из UI в Messages.js и приравнивает к textMessage
-
-    else if (action.type === 'changeMessText') {
-      this._state.Dialogs_main.newMessText = action.textMessage;
-      this._rerenderTree(this._state); //перерисовываем страницу для отображения внесенных изменений
-    }
+  this._state.Dialogs_main = dialogs_main_redusor(action, this._state.Dialogs_main);//разделяем функции диспатча при помощи Redusora, передаем в него action,
+                                                                                    //который добавляется при пробросе через state в UI, приравнивакя в функцию, которая в итоге возвращает измененный state
+  this._state.Body = body_redusor(action, this._state.Body);//разделяем функции диспатча при помощи Redusora, передаем в него action,
+                                                           //который добавляется при пробросе через state в UI, приравнивакя в функцию, которая в итоге возвращает измененный state
+  this._rerenderTree(this._state); //перерисовываем страницу для отображения внесенных изменений
   }
 
 
 
 }
+const addnewMess = 'addnewMess';
+const changeMessText = 'changeMessText';
+const addnewPost = 'addnewPost';
+const changePostText = 'changePostText';
+export const addnewPostActioncreator = () => {
+  return {
+    type: addnewPost
+  }
+}
+export const changePostTextActioncreator = (text) => {
+  return {
+    type:changePostText,
+    textMessage: text
+  }
+}
 export const actionaddPostcreator = () => {
   return {
-  type:'addnewMess'
-}
+    type:addnewMess
+  }
 }
 export const actionchangeMessTextcreator = (text) => {
   return {
-  type:'changeMessText', textMessage:text
-}
+    type:changeMessText, textMessage:text
+  }
 }
 
 export default store;
