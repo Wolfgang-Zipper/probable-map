@@ -4,12 +4,12 @@ import Messages from './Messages/Messages.js'
 import Dialogs from './Dialogs/Dialogs.js'
 import {BrowserRouter, Route} from 'react-router-dom';
 const Dialogs_main = (props) =>{
-
+debugger
   return(
     <BrowserRouter>
     <div className={s.bod}>
     <Dialogs dialogsData={props.dialogsData}/>
-    <Messages dispatch={props.dispatch} newMessText={props.newMessText}  messagesData={props.messagesData} />
+    <Messages onChangeMess={props.onChangeMess} addPost = {props.addPost} newMessText={props.newMessText}  messagesData={props.messagesData} />
     </div>
     </BrowserRouter>
   )

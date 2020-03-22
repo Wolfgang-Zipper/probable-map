@@ -1,6 +1,6 @@
 
-import dialogs_main_redusor from './dialogs_main_redusor.jsx'
-import body_redusor from './body_redusor.jsx'
+import dialogs_main_redusor from './dialogs_main_redusor.js'
+import body_redusor from './body_redusor.js'
 
 
 
@@ -61,17 +61,7 @@ const addnewMess = 'addnewMess';
 const changeMessText = 'changeMessText';
 const addnewPost = 'addnewPost';
 const changePostText = 'changePostText';
-export const addnewPostActioncreator = () => {
-  return {
-    type: addnewPost
-  }
-}
-export const changePostTextActioncreator = (text) => {
-  return {
-    type:changePostText,
-    textMessage: text
-  }
-}
+
 export const actionaddPostcreator = () => {
   return {
     type:addnewMess

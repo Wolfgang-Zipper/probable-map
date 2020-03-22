@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Posts.module.css'
 import Post from './Post/Post.js'
-import {changePostTextActioncreator, addnewPostActioncreator} from '../../../Redux/State.js';
+import {changePostTextActioncreator, addnewPostActioncreator} from '../../../Redux/body_redusor.js';
 
 const Posts = (props) => {
 
@@ -12,11 +12,12 @@ const Posts = (props) => {
     let addPost = () => {
       let text = NewPostElement.current.value;
       props.dispatch(addnewPostActioncreator()); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
-
+    
     };
     let onChangePost = () => {
       let text = NewPostElement.current.value;//значение в input
       props.dispatch(changePostTextActioncreator(text));// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
+
     };
     return (
       <div className={s.bod}>

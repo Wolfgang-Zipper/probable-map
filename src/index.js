@@ -9,15 +9,19 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '@fortawesome/fontawesome-free/css/all.css';
 import * as serviceWorker from './serviceWorker';
-import store from './Redux/State.js';
+import store from './Redux/redux-store.js';
 
 
 
-export let rerenderTree = () => {
-    // метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store", так как при передаче функций через props мы получаем ошибку, store undefined (функция находится в props, а не в store)
-    ReactDOM.render(<App appData={store.getState()} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
-    
+export let rerenderTree = (state) => {
+    // метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store",
+    //так как при передаче функций через props мы получаем ошибку, store undefined (функция находится в props, а не в store)
+    ReactDOM.render(<App state={state} store={store} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
+
 };
 // метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store"
 rerenderTree(store.getState());
-store.subscribe(rerenderTree);
+store.subscribe( () => { // создана анонимная функция, которая при исполнении присваивает значению "state" значение полученное при помощи store.getState() и я передаю его в  rerenderTree ()
+  let state = store.getState();
+  rerenderTree(state)
+});

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header.jsx';
 import Main from './Components/Main/Main.jsx';
-import Dialogs_main from './Components/Dialogs_main/Dialogs_main.jsx';
+import Dialogs_mainContainer from './Components/Dialogs_main/Dialogs_mainContainer.jsx';
 import Friends from './Components/Friends/Friends.jsx';
 import Grecha from './Components/Grecha/Grecha.jsx';
 
@@ -12,6 +12,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 
 const App = (props) => {
+  let state = props.state;
   return (
     <BrowserRouter>
     <div className='back'>
@@ -19,18 +20,20 @@ const App = (props) => {
     <div className='App content'>
     <Main />
     <div className='route_content'>
-    <Route path="/Body" render={ () => <Body
+    <Route path="/Body" render={ () =>
+      <Body
         dispatch={props.dispatch}
-        newPostText={props.appData.Body.newPostText}
-        friendsData={props.appData.Body.friendsData}
-        postDate={props.appData.Body.postDate}/>} />
-    <Route path="/Dialogs_main" render={ () => <Dialogs_main
+        newPostText={state.Body.newPostText}
+        friendsData={state.Body.friendsData}
+        postDate={state.Body.postDate}/>} />
+    <Route path="/Dialogs_main" render={ () =>
+      <Dialogs_mainContainer
+        state={state}
         dispatch={props.dispatch}
-        newMessText={props.appData.Dialogs_main.newMessText}
-        messagesData={props.appData.Dialogs_main.messagesData}
-        dialogsData={props.appData.Dialogs_main.dialogsData} />} />
-    <Route path="/Friends" render={ () => <Friends
-        friendsData={props.appData.Body.friendsData}/>} />
+        store={props.store} />} />
+    <Route path="/Friends" render={ () =>
+      <Friends
+        friendsData={state.Body.friendsData}/>} />
         <Route path="/Grecha" render={ () => <Grecha/>} />
       </div>
       </div>
