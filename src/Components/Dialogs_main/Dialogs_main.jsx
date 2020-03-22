@@ -4,7 +4,7 @@ import Messages from './Messages/Messages.js'
 import Dialogs from './Dialogs/Dialogs.js'
 import {BrowserRouter, Route} from 'react-router-dom';
 const Dialogs_main = (props) =>{
-debugger
+
   return(
     <BrowserRouter>
     <div className={s.bod}>

@@ -6,7 +6,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 
 const Messages = (props) => {
-debugger
+
     let messages = props.messagesData.map(mess => <Message id={mess.id} date_massege={mess.date_massege}
                                                            name={mess.name} text_massage={mess.text_massage}/>);
 

@@ -45,7 +45,7 @@ class Grecha extends React.Component {
       return (
         <ul >
         <div className="pattern2">
-        <h1 className="overlay_h">Курс гречи</h1>
+        <h1 className="overlay_h">Курс Гречи</h1>
         <h1 className="overlay">{(this.state.items.USD.Value * 0.89).toFixed(2)} ₽</h1>
         </div>
 

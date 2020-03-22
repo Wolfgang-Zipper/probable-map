@@ -11,10 +11,10 @@ let addPost = () => {
   props.dispatch(actionaddPostcreator()); //вызов функции, проброшенной через props из "BLL" (добавляет данные сообщения в "state" взятые из того же "state",
                       //которые были добавлены туди из функции передачи ввода "onCgangeMess")
 };
-debugger
+
   return(
       <Dialogs_main dialogsData={props.state.Dialogs_main.dialogsData} onChangeMess={onChangeMess} addPost = {addPost} newMessText={props.state.Dialogs_main.newMessText}  messagesData={props.state.Dialogs_main.messagesData}  />
   )
-  debugger
+
 }
-export default Dialogs_mainContainer;
+export default Dialogs_mainContainer; //Container для тупой/презентационной функциональной компоненты в который перенесена вся логика и переданные через props dispatch и store
