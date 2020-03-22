@@ -5,7 +5,6 @@ const Dialogs_mainContainer = (props) =>{
 
 
 let onChangeMess = (text) => {
-
   props.dispatch(actionchangeMessTextcreator(text));//помещает из поля ввода input значения,
 }
 let addPost = () => {
@@ -14,7 +13,7 @@ let addPost = () => {
 };
 debugger
   return(
-      <Dialogs_main onChangeMess={onChangeMess} addPost = {addPost} newMessText={props.state.Dialogs_main.newMessText}  messagesData={props.state.Dialogs_main.messagesData}  />
+      <Dialogs_main dialogsData={props.state.Dialogs_main.dialogsData} onChangeMess={onChangeMess} addPost = {addPost} newMessText={props.state.Dialogs_main.newMessText}  messagesData={props.state.Dialogs_main.messagesData}  />
   )
   debugger
 }

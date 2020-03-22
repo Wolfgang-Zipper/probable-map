@@ -11,7 +11,10 @@ debugger
                                                            name={mess.name} text_massage={mess.text_massage}/>);
 
     let NewTextElement = React.createRef();
-    let text = NewTextElement.current.value;
+    let onChangeMessText = () => {
+      let text = NewTextElement.current.value;
+      props.onChangeMess(text);//помещает из поля ввода input значения,
+    }
 
 
     return (
@@ -20,7 +23,7 @@ debugger
 
 
                 <div className="input-group mb-3">
-                    <input ref={NewTextElement} onChange={props.onChangeMess(text)} value={props.newMessText}  type="text" className="form-control" />
+                    <input ref={NewTextElement} onChange={onChangeMessText} value={props.newMessText}  type="text" className="form-control" />
                         <div className="input-group-append">
                           <button onClick={props.addPost}  className="btn btn-outline-secondary" type="button" id="button-addon2">Button
                           </button>
