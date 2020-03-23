@@ -7,7 +7,7 @@ import Dialogs_mainContainer from './Components/Dialogs_main/Dialogs_mainContain
 import Friends from './Components/Friends/Friends.jsx';
 import Grecha from './Components/Grecha/Grecha.jsx';
 
-import Body from './Components/Body/Body.jsx';
+import BodyContainer from './Components/Body/BodyContainer.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -21,7 +21,7 @@ const App = (props) => {
     <Main />
     <div className='route_content'>
     <Route path="/Body" render={ () =>
-      <Body
+      <BodyContainer
         dispatch={props.dispatch}
         newPostText={state.Body.newPostText}
         friendsData={state.Body.friendsData}

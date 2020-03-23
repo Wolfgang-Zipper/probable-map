@@ -10,7 +10,7 @@ let iniState = {
   postDate: [
     {id: 1, name: 'Сергей', post_date: '21.02.2020 17:09:41', post_text: 'Hello', like: 45}
   ],
-  newPostText:''
+  newPostText:'12'
 
 
 }

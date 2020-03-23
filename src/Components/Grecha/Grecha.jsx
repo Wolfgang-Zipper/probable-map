@@ -36,6 +36,7 @@ class Grecha extends React.Component {
   }
 
   render() {
+    debugger
     const { error, isLoaded, items } = this.state;
     if (error) {
       return <div>Ошибка: {error.message}</div>;
