@@ -13,7 +13,7 @@ import store from './Redux/redux-store.js';
 import {Provider} from "react-redux";
 
 
-export let rerenderTree = (state) => {
+
   // метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store",
   //так как при передаче функций через props мы получаем ошибку, store undefined (функция находится в props, а не в store)
   ReactDOM.render(
@@ -21,11 +21,3 @@ export let rerenderTree = (state) => {
         <App/>
       </Provider>,
     document.getElementById('root'));
-
-  };
-  // метод .bind() связывает последовательность вызова(передачи) методов от прямого владельца "store"
-  rerenderTree();
-  store.subscribe( () => { // создана анонимная функция, которая при исполнении присваивает значению "state" значение полученное при помощи store.getState() и я передаю его в  rerenderTree ()
-    let state = store.getState();
-    rerenderTree(state)
-  });

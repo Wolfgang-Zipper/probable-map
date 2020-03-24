@@ -1,6 +1,6 @@
 
-import dialogs_main_redusor from './dialogs_main_redusor.js'
-import body_redusor from './body_redusor.js'
+//import dialogs_main_redusor from './dialogs_main_redusor.js'
+//import body_redusor from './body_redusor.js'
 
 
 

@@ -10,7 +10,7 @@ let iniState = {
   postDate: [
     {id: 1, name: 'Сергей', post_date: '21.02.2020 17:09:41', post_text: 'Hello', like: 45}
   ],
-  newPostText:'12'
+  newPostText:''
 
 
 }
@@ -18,30 +18,33 @@ let iniAction = {
 
 }
 const body_redusor = (state = iniState, action = iniAction) => {
+  let newState = {...state}
+
 
   //функция добавления новых данных из функции newPost в state.Body.postDate
   if (action.type === addnewPost){
 
     let newPost = {
       id: 7,
-      name: state.friendsData[0].name,
+      name: newState.friendsData[0].name,
       post_date: dataSet(),
-      post_text: state.newPostText,
+      post_text: newState.newPostText,
       like: 0
     };
 
-    state.postDate.push(newPost);
-    state.newPostText=""; //"очищаем" state.Body.newPostText, которое передается в поле ввода UI
+    newState.postDate.push(newPost);
+    newState.newPostText=""; //"очищаем" state.Body.newPostText, которое передается в поле ввода UI
 
   }
   //функция обновления данных "newPostText", которая получает "textMessage" при вызове через props из UI в Posts.js и приравнивает к textMessage
   else if (action.type === changePostText) {
-    state.newPostText = action.textMessage;
-    debugger
+
+    newState.newPostText = action.textMessage;
+
 
   }
 
-  return state;
+  return newState;
 }
 export const addnewPostActioncreator = () => {
   return {

@@ -19,7 +19,7 @@ const Posts = (props) => {
     let onChangePostcreate = () => {
       let text = NewPostElement.current.value;//значение в input
       props.onChangePost(text);// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
-debugger
+
     };
 
     return (
