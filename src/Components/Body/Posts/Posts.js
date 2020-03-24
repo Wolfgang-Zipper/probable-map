@@ -15,11 +15,13 @@ const Posts = (props) => {
       props.addPost();// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
 
     };
+
     let onChangePostcreate = () => {
       let text = NewPostElement.current.value;//значение в input
       props.onChangePost(text);// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
-
+debugger
     };
+
     return (
       <div className={s.bod}>
       <div сlassName={s.create_post}>

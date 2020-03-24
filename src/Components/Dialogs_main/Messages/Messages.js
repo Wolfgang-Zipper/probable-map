@@ -23,7 +23,7 @@ const Messages = (props) => {
 
 
                 <div className="input-group mb-3">
-                    <input ref={NewTextElement} onChange={onChangeMessText} value={props.newMessText}  type="text" className="form-control" />
+                    <input ref={NewTextElement} onChange={props.onChangeMessText} value={props.newMessText}  type="text" className="form-control" />
                         <div className="input-group-append">
                           <button onClick={props.addPost}  className="btn btn-outline-secondary" type="button" id="button-addon2">Button
                           </button>

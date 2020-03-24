@@ -3,7 +3,7 @@ import dialogs_main_redusor from './dialogs_main_redusor';
 import body_redusor from './body_redusor';
 
 let redusers = combineReducers({
-  Body: body_redusor,
+  body: body_redusor,
   Dialogs_main: dialogs_main_redusor
 });
 

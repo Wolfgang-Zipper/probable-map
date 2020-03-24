@@ -37,8 +37,10 @@ const body_redusor = (state = iniState, action = iniAction) => {
   //функция обновления данных "newPostText", которая получает "textMessage" при вызове через props из UI в Posts.js и приравнивает к textMessage
   else if (action.type === changePostText) {
     state.newPostText = action.textMessage;
+    debugger
 
   }
+
   return state;
 }
 export const addnewPostActioncreator = () => {
@@ -48,7 +50,7 @@ export const addnewPostActioncreator = () => {
 }
 export const changePostTextActioncreator = (text) => {
   return {
-    type:changePostText,
+    type: changePostText,
     textMessage: text
   }
 }

@@ -1,20 +1,25 @@
 import React from 'react';
 import Dialogs_main from './Dialogs_main.jsx'
 import {actionaddPostcreator, actionchangeMessTextcreator} from '../../Redux/dialogs_main_redusor.js';
-const Dialogs_mainContainer = (props) =>{
+import {connect} from 'react-redux'
 
-
-let onChangeMess = (text) => {
-  props.dispatch(actionchangeMessTextcreator(text));//помещает из поля ввода input значения,
+let mapStateToProps = (state) => {
+  return{
+    Dialogs_main: state.Dialogs_main
+  }
 }
-let addPost = () => {
-  props.dispatch(actionaddPostcreator()); //вызов функции, проброшенной через props из "BLL" (добавляет данные сообщения в "state" взятые из того же "state",
-                      //которые были добавлены туди из функции передачи ввода "onCgangeMess")
-};
-
-  return(
-      <Dialogs_main dialogsData={props.state.Dialogs_main.dialogsData} onChangeMess={onChangeMess} addPost = {addPost} newMessText={props.state.Dialogs_main.newMessText}  messagesData={props.state.Dialogs_main.messagesData}  />
-  )
-
+let mapDispatchToProps = (dispatch) => {
+  return{
+    addPost: () => {
+        dispatch(actionaddPostcreator());
+    },
+    onChangeMess: (text) => {
+      dispatch(actionchangeMessTextcreator(text));
+    }
+  }
 }
+
+const Dialogs_mainContainer = connect (mapStateToProps, mapDispatchToProps) (Dialogs_main);
+
+
 export default Dialogs_mainContainer; //Container для тупой/презентационной функциональной компоненты в который перенесена вся логика и переданные через props dispatch и store

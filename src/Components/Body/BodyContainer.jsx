@@ -6,22 +6,29 @@ import Info from './Info/Info.js'
 import Friends from '../Friends/Friends.jsx'
 import Body from './Body.jsx'
 import {changePostTextActioncreator, addnewPostActioncreator} from '../../Redux/body_redusor.js';
+import {connect} from 'react-redux'
+let mapStateToProps = (state) => {
+  return {
+    newPostText: state.body.newPostText,
+    postDate: state.body.postDate,
+    friendsData: state.body.friendsData
 
-const BodyContainer = (props) =>{
-  let addPost = () => {
+  }
+}
 
-  props.dispatch(addnewPostActioncreator()); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addPost: () =>{
 
-  };
-  let onChangePost = (text) => {
+        dispatch(addnewPostActioncreator()); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
+    },
+    onChangePost: (text) =>{
 
-    props.dispatch(changePostTextActioncreator(text));// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
+      dispatch(changePostTextActioncreator(text));// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
 
-  };
-  return(
-
-    <Body onChangePost={onChangePost} addPost={addPost} newPostText={props.newPostText} postDate={props.postDate} friendsData={props.friendsData} />
-
-  )
-};
+    }
+  }
+  debugger
+}
+const BodyContainer = connect (mapStateToProps, mapDispatchToProps)(Body);
 export default BodyContainer;

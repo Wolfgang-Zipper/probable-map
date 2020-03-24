@@ -8,8 +8,8 @@ const Dialogs_main = (props) =>{
   return(
     <BrowserRouter>
     <div className={s.bod}>
-    <Dialogs dialogsData={props.dialogsData}/>
-    <Messages onChangeMess={props.onChangeMess} addPost = {props.addPost} newMessText={props.newMessText}  messagesData={props.messagesData} />
+    <Dialogs dialogsData={props.Dialogs_main.dialogsData}/>
+    <Messages onChangeMess={props.onChangeMess} addPost = {props.addPost} newMessText={props.Dialogs_main.newMessText}  messagesData={props.Dialogs_main.messagesData} />
     </div>
     </BrowserRouter>
   )
