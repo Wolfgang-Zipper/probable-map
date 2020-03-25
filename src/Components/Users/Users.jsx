@@ -1,9 +1,9 @@
 import React from 'react';
 
 import User from './User/User.js'
-const Users = () =>{
+const Users = (props) =>{
   return (
-    <User/>
+    <User Users={state.Users}/>
   )
 }
 

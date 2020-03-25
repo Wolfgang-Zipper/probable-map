@@ -6,7 +6,7 @@ const Friend = (props) =>{
 
         <img src="https://sun1-84.userapi.com/c855416/v855416401/1ca372/wl_fgfKGcuw.jpg?ava=1"/>
         <div className={s.header}>
-        {props.name}
+        {props.Users.name}
         </div>
     </div>
   )
