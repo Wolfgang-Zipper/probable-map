@@ -19,24 +19,30 @@ let iniAction = {
 
 }
 const dialogs_main_redusor = (state = iniState, action = iniAction) => {
-  let newState = {...state}
+
+
   switch (action.type) {
     case addnewMess://функция добавления новых данных из функции newMess в state.Dialogs_main.newMessText
     let newMess = {
       id: 3,
       name: 'Димон',
       date_massege: dataSet(),
-      text_massage: newState.newMessText
+      text_massage: state.newMessText,
     }
-    newState.messagesData = [...state.messagesData];
-    newState.messagesData.push(newMess);
-    newState.newMessText="";
-    return newState;
+    // рефакторинг заключался в том, что у меня обьявлялся newState который = state и он был равен обьекту сообщения, теперь обьект создается и возвращается одновременно.
+    return {
+      ...state,
+      messagesData: [...state.messagesData, newMess], //messagesData это копия state.messagesData + добавленное сообщение
+      newMessText: "" //сразу же зануляю строку
+    };
     case changeMessText:  //функция обновления данных "newMessText", которая получает "textMessage" при вызове через props из UI в Messages.js и приравнивает к textMessage
-    newState.newMessText = action.textMessage;
+    return {
+      ...state,
+      newMessText: action.textMessage
+    }
 
-    return newState;
-    default:  return newState;
+
+    default:  return state;
 
   }
 
