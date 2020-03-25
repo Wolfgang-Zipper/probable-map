@@ -12,30 +12,31 @@ let iniState = {
     {id: 2, name: 'Виталий', date_massege: dataSet(), text_massage: 'Hi'},
     {id: 3, name: 'Димон', date_massege: '21.02.2020 17:09:41', text_massage: 'ВКонтакте лучше'},
   ],
-  newMessText:'12dd3'
+  newMessText:''
 }
 
 let iniAction = {
 
 }
 const dialogs_main_redusor = (state = iniState, action = iniAction) => {
-
+  let newState = {...state}
   switch (action.type) {
     case addnewMess://функция добавления новых данных из функции newMess в state.Dialogs_main.newMessText
     let newMess = {
       id: 3,
       name: 'Димон',
       date_massege: dataSet(),
-      text_massage: state.newMessText
+      text_massage: newState.newMessText
     }
-    state.messagesData.push(newMess);
-    state.newMessText="";
-    return state;
+    newState.messagesData = [...state.messagesData];
+    newState.messagesData.push(newMess);
+    newState.newMessText="";
+    return newState;
     case changeMessText:  //функция обновления данных "newMessText", которая получает "textMessage" при вызове через props из UI в Messages.js и приравнивает к textMessage
-    state.newMessText = action.textMessage;
+    newState.newMessText = action.textMessage;
 
-    return state;
-    default:  return state;
+    return newState;
+    default:  return newState;
 
   }
 

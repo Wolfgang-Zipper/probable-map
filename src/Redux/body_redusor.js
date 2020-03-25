@@ -18,8 +18,8 @@ let iniAction = {
 
 }
 const body_redusor = (state = iniState, action = iniAction) => {
-  let newState = {...state}
 
+  let newState = {...state}
 
   //функция добавления новых данных из функции newPost в state.Body.postDate
   if (action.type === addnewPost){
@@ -31,8 +31,8 @@ const body_redusor = (state = iniState, action = iniAction) => {
       post_text: newState.newPostText,
       like: 0
     };
-
-    newState.postDate.push(newPost);
+    newState.postDate = [...state.postDate];
+    newState.postDate.unshift(newPost);
     newState.newPostText=""; //"очищаем" state.Body.newPostText, которое передается в поле ввода UI
 
   }
@@ -43,7 +43,6 @@ const body_redusor = (state = iniState, action = iniAction) => {
 
 
   }
-
   return newState;
 }
 export const addnewPostActioncreator = () => {
