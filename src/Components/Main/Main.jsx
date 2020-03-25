@@ -12,6 +12,8 @@ const Main = () => {
     <i className="fas ico_n fa-envelope"/> Сообщения</li></NavLink>
     <NavLink className={s.link_inner} to="/Friends"><li className={s.link}>
     <i className="fas ico_n fa-user-friends"/> Друзья</li></NavLink>
+    <NavLink className={s.link_inner} to="/Users"><li className={s.link}>
+    <i className="fas fa-search"/> Поиск</li></NavLink>
     <NavLink className={s.link_inner} to="/News"><li className={s.link}>
     <i class="far ico_n fa-newspaper"/> Новости</li></NavLink>
     <NavLink className={s.link_inner} to="/Photo"><li className={s.link}>

@@ -9,7 +9,7 @@ let iniState = {
   ],
   messagesData: [
     {id: 1, name: 'Сергей', date_massege: '21.02.2020 17:09:41', text_massage: 'Hello'},
-    {id: 2, name: 'Виталий', date_massege: dataSet(), text_massage: 'Hi'},
+    {id: 2, name: 'Виталий', date_massege: '21.02.2020 17:09:41', text_massage: 'Hi'},
     {id: 3, name: 'Димон', date_massege: '21.02.2020 17:09:41', text_massage: 'ВКонтакте лучше'},
   ],
   newMessText:''

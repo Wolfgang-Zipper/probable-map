@@ -6,7 +6,7 @@ import Main from './Components/Main/Main.jsx';
 import Dialogs_mainContainer from './Components/Dialogs_main/Dialogs_mainContainer.jsx';
 import FriendsContainer from './Components/Friends/FriendsContainer.jsx';
 import Grecha from './Components/Grecha/Grecha.jsx';
-
+import UsersContainer from './Components/Users/UsersContainer.jsx';
 import BodyContainer from './Components/Body/BodyContainer.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 
@@ -22,6 +22,7 @@ const App = (props) => {
     <div className='route_content'>
     <Route path="/Body" render={ () => <BodyContainer/>} />
     <Route path="/Dialogs_main" render={ () => <Dialogs_mainContainer/>} />
+    <Route path="/Users" render={ () => <UsersContainer/>} />
     <Route path="/Friends" render={ () => <FriendsContainer/>} />
     <Route path="/Grecha" render={ () => <Grecha/>} />
     </div>
