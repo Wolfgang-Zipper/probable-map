@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className={s.mai}>
     <ul>
-    <NavLink className={s.link_inner} to="/Body"><li className={s.link}><i class="fas ico_n fa-home"></i> Главная
+    <NavLink className={s.link_inner} to="/Body"><li className={s.link}><i className="fas ico_n fa-home"></i> Главная
     </li></NavLink>
     <NavLink className={s.link_inner} to="/Dialogs_main"><li className={s.link}>
     <i className="fas ico_n fa-envelope"/> Сообщения</li></NavLink>
@@ -15,9 +15,9 @@ const Main = () => {
     <NavLink className={s.link_inner} to="/Users"><li className={s.link}>
     <i className="fas fa-search"/> Поиск</li></NavLink>
     <NavLink className={s.link_inner} to="/News"><li className={s.link}>
-    <i class="far ico_n fa-newspaper"/> Новости</li></NavLink>
+    <i className="far ico_n fa-newspaper"/> Новости</li></NavLink>
     <NavLink className={s.link_inner} to="/Photo"><li className={s.link}>
-    <i class="fas ico_n fa-images"/> Фотографии</li></NavLink>
+    <i className="fas ico_n fa-images"/> Фотографии</li></NavLink>
     <NavLink className={s.link_inner} to="/Settings"><li className={s.link}>
     <i className="fas ico_n fa-cog"/> Настройки</li></NavLink>
     <NavLink className={s.link_inner} to="/Grecha"><li className={s.link}>

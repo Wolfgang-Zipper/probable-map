@@ -18,7 +18,7 @@ const Post = (props) =>{
       <div className={s.post_body}>
       {props.post_text}
       <div className={s.like} >
-      <i class="far fa-heart"> {props.like}</i>
+      <i сlassName="far fa-heart"> {props.like}</i>
       </div>
       </div>
     </div>
