@@ -6,6 +6,7 @@ let mapStateToProps = (state) => {
     Users: state.Users
   }
 }
+
 const UsersContainer = connect(mapStateToProps)(Users);
 
 export default UsersContainer;
