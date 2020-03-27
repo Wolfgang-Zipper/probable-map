@@ -8,22 +8,20 @@ const Users = (props) =>{
   {
     props.users.map( use =>
       <div key={use.id} className={s.body}>
-
-      <img src="https://sun1-84.userapi.com/c855416/v855416401/1ca372/wl_fgfKGcuw.jpg?ava=1"/>
-      <div className={s.header}>
-      {use.name}
-      {use.status}
-      {use.country},{use.city}
-      {
-        use.followed ?
-        <button onClick={() => {props.unfollow(use.id)}} className="btn btn-outline-secondary" type="button" id="button-addon2">Unfollow</button>
-        :
-        <button onClick={() => {props.follow(use.id)}} className="btn btn-outline-secondary" type="button" id="button-addon2">Follow</button>
-      }
-
-
-
+      <div className={s.av}>
+          <img src={use.img}/>
       </div>
+      <div className={s.fo}>
+          {use.followed ?
+          <button onClick={() => {props.unfollow(use.id)}} className="btn btn-outline-secondary btn-sm follow" type="button" id="button-addon2">Отписаться</button>
+          :
+          <button onClick={() => {props.follow(use.id)}} className="btn btn-outline-secondary btn-sm unfollow" type="button" id="button-addon2">Подписаться</button>}
+      </div>
+      <div className={s.na}>{use.name}</div>
+      <div className={s.st}>{use.status}</div>
+      <div className={s.lo}><i className="fas fa-map-marker-alt"/> {use.location.country}, {use.location.city}</div>
+
+
       </div>
     )
   }

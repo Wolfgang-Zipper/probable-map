@@ -1,5 +1,12 @@
 .body{
-  grid-area: p;
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  grid-template-rows: 1fr 1fr 40px;
+  grid-template-areas:
+  "a n l"
+  "a s ."
+  "f . .";
+  grid-gap: 5px;
   margin: 2px 0px;
 
   float: left;
@@ -7,13 +14,38 @@
   width: 100%;
   border-radius: 15px;
 }
+
 .body img{
-  width: 45px;
+  width: 80px;
 
   border-radius: 50px;
   margin: 11px;
-  float: left;
+
 }
-.header{
-  float: left;
+
+.av {
+  grid-area: a;
+  text-align: center;
+}
+.fo {
+  grid-area: f;
+  text-align: center;
+}
+
+.na {
+  grid-area: n;
+  font-size: 22px;
+  margin-top: 14px;
+}
+
+.st {
+  grid-area: s;
+  opacity: 0.7;
+}
+
+.lo {
+  text-align: right;
+  margin: 12px 25px;
+  grid-area: l;
+  float: right;
 }
