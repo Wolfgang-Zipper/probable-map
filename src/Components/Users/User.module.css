@@ -1,7 +1,7 @@
 .body{
   display: grid;
   grid-template-columns: 1fr 5fr 2fr;
-  grid-template-rows: 1fr 1fr 40px;
+  grid-template-rows: 1fr 20px 40px;
   grid-template-areas:
   "a n l"
   "a s ."
