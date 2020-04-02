@@ -6,7 +6,7 @@ const Avatar = (props) =>{
     <div className={s.name}>
     {props.name}
     </div>
-    <img src="https://sun9-64.userapi.com/c855120/v855120069/981f9/HyBi4GnBoDE.jpg"/>
+    <img src={props.photo}/>
     </div>
   )
 }

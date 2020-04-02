@@ -1,7 +1,9 @@
 import dataSet from "./Data.js"
 const addnewPost = 'addnewPost';
 const changePostText = 'changePostText';
+const getPageUser = 'getPageUser';
 let iniState = {
+  profile: null,
   friendsData: [
     {id: 1, name: 'Сергей'},
     {id: 2, name: 'Виталий'},
@@ -43,17 +45,15 @@ const body_redusor = (state = iniState, action = iniAction) => {
 
 
   }
+  else if (action.type === getPageUser) {
+
+    newState.profile = action.profile;
+
+
+  }
   return newState;
 }
-export const addnewPostActioncreator = () => {
-  return {
-    type: addnewPost
-  }
-}
-export const changePostTextActioncreator = (text) => {
-  return {
-    type: changePostText,
-    textMessage: text
-  }
-}
+export const addnewPostActioncreator = () => ({type: addnewPost })
+export const changePostTextActioncreator = (text) => ({type: changePostText, textMessage: text })
+export const getPageUserAC = (profile) => ({type: getPageUser, profile })
 export default body_redusor;

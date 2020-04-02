@@ -20,7 +20,7 @@ const App = (props) => {
     <div className='App content'>
     <Main />
     <div className='route_content'>
-    <Route path="/Body" render={ () => <BodyContainer/>} />
+    <Route path="/Body/:userId?" render={ () => <BodyContainer/>} />
     <Route path="/Dialogs_main" render={ () => <Dialogs_mainContainer/>} />
     <Route path="/Users" render={ () => <UsersContainer/>} />
     <Route path="/Friends" render={ () => <FriendsContainer/>} />

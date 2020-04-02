@@ -7,12 +7,15 @@
 .ava img{
   padding: 5px;
   width: auto;
-  height: 500px;
+
   border-radius: 10px;
 
 }
 .name{
-  text-align: center;
+  text-align: left;
+  padding: 0px 10px;
+  font-weight: bold;
+
   background-color: white;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;

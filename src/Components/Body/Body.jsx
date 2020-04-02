@@ -13,8 +13,8 @@ const Body = (props) =>{
     </div>
     <Friends friendsData={props.friendsData}/>
     </div>
-    <Avatar name="Сергей Зеленский"/>
-    <Info/>
+    <Avatar name={props.profile.fullName} photo={props.profile.photos.large}/>
+    <Info aboutMe={props.profile.aboutMe} contacts={props.profile.contacts}/>
     <Posts  onChangePost={props.onChangePost} addPost={props.addPost} newPostText={props.newPostText}  postDate={props.postDate}/>
     </div>
   )
