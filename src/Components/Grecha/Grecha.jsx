@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
 import video from '../../Images/grech.mp4'
-
+import {Preloader} from '../Preloader.jsx'
 class Grecha extends React.Component {
 
   constructor(props) {
@@ -41,7 +41,7 @@ class Grecha extends React.Component {
     if (error) {
       return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>Загрузка...</div>;
+      return <Preloader/>;
     } else {
       return (
         <ul >

@@ -5,19 +5,19 @@ import Avatar from './Avatar/Avatar.js'
 import Info from './Info/Info.js'
 import Friends from '../Friends/Friends.jsx'
 import Body from './Body.jsx'
-import * as axios from 'axios';
 import {changePostTextActioncreator, addnewPostActioncreator, getPageUserAC} from '../../Redux/body_redusor.js';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {Preloader} from '../Preloader.jsx'
+import { API_REQ } from '../API/API_REQ';
 
 class BodyAPI extends React.Component {
   componentDidMount (){
     let userId = this.props.match.params.userId;
     if (!userId) {
       userId = 2;
-    }
-    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
+      }
+      API_REQ.getProfile(userId)
       .then(response => {
         this.props.getPageUser(response.data);
       });
@@ -58,7 +58,7 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(getPageUserAC(profile));
     }
   }
-  debugger
+  
 }
 let GetRouterLoc = withRouter (BodyAPI);
 const BodyContainer = connect (mapStateToProps, mapDispatchToProps)(GetRouterLoc);

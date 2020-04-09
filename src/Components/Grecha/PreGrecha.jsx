@@ -1,12 +1,12 @@
 import React, {Component, useState} from 'react';
 import video from '../../Images/grech.mp4'
-
+import Preloader from '../Preloader.jsx'
 const PreGrecha = (props) => {
 const { props.error, props.isLoaded, props.items } = this.state;
 if (error) {
   return <div>Ошибка: {error.message}</div>;
 } else if (!isLoaded) {
-  return <div>Загрузка...</div>;
+  return <Preloader/>;
 } else {
 
   return (

@@ -14,14 +14,14 @@ const Info = (props) =>{
 
 
     </div>
-    <li><b>Facebook:</b> <a href={"https://" + props.contacts.facebook}>{props.contacts.facebook}</a></li>
-    <li><b>Сайт:</b> <a href={"https://" + props.contacts.website}>{props.contacts.website}</a></li>
-    <li><b>Vk:</b> <a href={"https://" + props.contacts.vk}>{props.contacts.vk}</a></li>
-    <li><b>Twitter:</b> <a href={"https://" + props.contacts.twitter}>{props.contacts.twitter}</a></li>
-    <li><b>Instagram:</b> <a href={"https://" + props.contacts.instagram}>{props.contacts.instagram}</a></li>
-    <li><b>Youtube:</b> <a href={"https://" + props.contacts.youtube}>{props.contacts.youtube}</a></li>
-    <li><b>Github:</b> <a href={"https://" + props.contacts.github}>{props.contacts.github}</a></li>
-    <li><b>MainLink:</b> <a href={"https://" + props.contacts.mainLink}>{props.contacts.mainLink}</a></li>
+    <li><b>Facebook:</b> <a target="_blank" href={props.contacts.facebook}>{props.contacts.facebook}</a></li>
+    <li><b>Сайт:</b> <a target="_blank" href={props.contacts.website}>{props.contacts.website}</a></li>
+    <li><b>Vk:</b> <a target="_blank" href={props.contacts.vk}>{props.contacts.vk}</a></li>
+    <li><b>Twitter:</b> <a target="_blank" href={props.contacts.twitter}>{props.contacts.twitter}</a></li>
+    <li><b>Instagram:</b> <a target="_blank" href={props.contacts.instagram}>{props.contacts.instagram}</a></li>
+    <li><b>Youtube:</b> <a target="_blank" href={props.contacts.youtube}>{props.contacts.youtube}</a></li>
+    <li><b>Github:</b> <a target="_blank" href={props.contacts.github}>{props.contacts.github}</a></li>
+    <li><b>MainLink:</b> <a target="_blank" href={props.contacts.mainLink}>{props.contacts.mainLink}</a></li>
 
     </div>
   )

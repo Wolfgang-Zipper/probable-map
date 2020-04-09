@@ -1,81 +1,79 @@
 import React from 'react';
-import {connect} from 'react-redux'
-import {follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader} from '../../Redux/users_redusor'
+import { connect } from 'react-redux'
+import { follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader, filterFollowProgress, getUsersThunk, followThunk, unfollowThunk } from '../../Redux/users_redusor'
 import Users from './Users.jsx'
-import * as axios from 'axios';
-import {Preloader} from '../Preloader.jsx'
+import { Preloader } from '../Preloader.jsx'
+import { API_REQ } from '../API/API_REQ';
 
 class UsersAPI extends React.Component {
 
-  componentDidMount() {
-    this.props.setPreLoader(true);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageNumber}&count=${this.props.userQuantity}`)
-      .then(response => {
-        this.props.setUsers(response.data);
-        this.props.getUsersCount(response.data.totalCount);
-        this.props.setPreLoader(false);
-      });
+    componentDidMount() {
+
+        this.props.getUsersThunk(this.props.pageNumber, this.props.userQuantity) //функция умеет включать Прелоадер, делать запрос на сервер для получения пользователей, 
+                                                                                 //передавать юзеров через коллбекфункцию, передавать количество юзеров и отключать прелоадер  
 
     }
-    currPage = (currNumber) => {
-        this.props.setPreLoader(true);
-      this.props.setCurrentPage(currNumber)
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currNumber}&count=${this.props.userQuantity}`)
-        .then(response => {
-          this.props.setUsers(response.data);
-          this.props.setPreLoader(false);
-        })
-      }
-      render() {
 
-        if (!this.props.isFetching)  return <Users
-        follow={this.props.follow}
-        unfollow={this.props.unfollow}
-        users={this.props.users}
-        currPage={this.currPage}
-        usersCount={this.props.usersCount}
-        userQuantity={this.props.userQuantity}/>
+    currPage = (currNumber) => {
+        this.props.getUsersThunk(currNumber, this.props.userQuantity)
+    }
+    render() {
+
+        if (!this.props.isFetching) return <Users
+            follow={this.props.follow}
+            unfollow={this.props.unfollow}
+            users={this.props.users}
+            currPage={this.currPage}
+            usersCount={this.props.usersCount}
+            userQuantity={this.props.userQuantity}
+            followProgress={this.props.followProgress}
+            filterFollowProgress={this.props.filterFollowProgress}
+            setPreLoader={this.props.setPreLoader}
+            unfollowThunk={this.props.unfollowThunk}
+            followThunk={this.props.followThunk}
+        />
         else {
-          return <Preloader/>
+            return <Preloader />
         }
 
-      }
     }
+}
 
-    let mapStateToProps = (state) => {
-      return{
+let mapStateToProps = (state) => {
+    return {
         users: state.Users.users,
         pageNumber: state.Users.pageNumber,
         userQuantity: state.Users.userQuantity,
         usersCount: state.Users.usersCount,
         pageNumbers: state.Users.pageNumbers,
-        isFetching: state.Users.isFetching
-      }
+        isFetching: state.Users.isFetching,
+        followProgress: state.Users.followProgress
     }
+}
 
-    // let mapDispatchToProps = (dispatch) => {
-    //   return{
-    //     follow: (userID) => {
-    //       dispatch(followAC(userID))
-    //     },
-    //     unfollow: (userID) => {
-    //       dispatch(unfollowAC(userID))
-    //     },
-    //     setUsers: (users) => {
-    //       dispatch(setUsersAC(users))
-    //     },
-    //     getUsersCount: (usersCount) => {
-    //       dispatch(getUsersCountAC(usersCount))
-    //     },
-    //     setCurrentPage: (pageNumber) => {
-    //       dispatch(setCurrentPageAC(pageNumber))
-    //     },
-    //     setPreLoader: (isFetching) => {
-    //       dispatch(setPreLoaderAC(isFetching))
-    //     }
-    //   }
-    // }
+// let mapDispatchToProps = (dispatch) => {
+//   return{
+//     follow: (userID) => {
+//       dispatch(followAC(userID))
+//     },
+//     unfollow: (userID) => {
+//       dispatch(unfollowAC(userID))
+//     },
+//     setUsers: (users) => {
+//       dispatch(setUsersAC(users))
+//     },
+//     getUsersCount: (usersCount) => {
+//       dispatch(getUsersCountAC(usersCount))
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber))
+//     },
+//     setPreLoader: (isFetching) => {
+//       dispatch(setPreLoaderAC(isFetching))
+//     }
+//   }
+// }
 
-    const UsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader})(UsersAPI);
+const UsersContainer = connect(mapStateToProps, { follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader, filterFollowProgress, getUsersThunk, followThunk, unfollowThunk})(UsersAPI);
 
-    export default UsersContainer;
+export default UsersContainer;
