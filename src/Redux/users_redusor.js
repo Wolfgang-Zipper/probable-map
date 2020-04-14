@@ -11,7 +11,7 @@ const FILTER_FOLLOW_PROGRESS = "FILTER_FOLLOW_PROGRESS";
 let iniState = {
     users: [],
     pageNumber: 1,
-    userQuantity: 3,
+    userQuantity: 100,
     usersCount: 0,
     pageNumbers: 0,
     isFetching: false,
@@ -80,6 +80,7 @@ export const getUsersCount = (usersCount) => ({ type: GET_COUNT_USER, usersCount
 export const setCurrentPage = (pageNumber) => ({ type: SET_PAGE_NUMBER, pageNumber })
 export const setPreLoader = (isFetching) => ({ type: SET_PRE_LOADER, isFetching })
 export const filterFollowProgress = (isFetch, id) => ({ type: FILTER_FOLLOW_PROGRESS, isFetch, id })
+
 export const getUsersThunk = (pageNumber, userQuantity) => (dispatch) => {
     dispatch(setPreLoader(true))
     API_REQ.getUsers(pageNumber, userQuantity)
@@ -89,7 +90,6 @@ export const getUsersThunk = (pageNumber, userQuantity) => (dispatch) => {
             dispatch(setPreLoader(false))
         })
 }
-
 
 export const followThunk = (userId) => (dispatch) => {
 dispatch(filterFollowProgress(true, userId))

@@ -45,23 +45,21 @@ const Header = (props) => {
                     <ul className="navbar-nav mr-auto">
 
                     </ul>
-                    {props.userData.resultCode == 1
+                    
+                    {!(props.location.pathname == "/Login_page") 
+                    ? 
+                        props.userData.resultCode == 1
                         ?
-                        <form className="form-inline my-2 my-lg-0">
-                            <div className="form-group mb-2">
-                                <label for="staticEmail2" className="sr-only">Email</label>
-                                <input type="text" readonly className="form-control form-control-sm" id="staticEmail2" placeholder="Логин" />
-                            </div>
-                            <div className="form-group mx-sm-3 mb-2">
-                                <label for="inputPassword2" className="sr-only">Password</label>
-                                <input type="password" classNameName="form-control form-control-sm" id="inputPassword2" placeholder="Пароль" />
-                            </div>
-                            <button className="btn btn-secondary mb-2 btn-sm">Войти</button>
-                        </form>
+                        <NavLink className={s.link_inner} to="/Login_page"><li className={s.link}> Войти </li></NavLink>
                         :
                         <div >
                             <p className={s.login}>{props.userData.data.login}</p>
                             <img className={s.login_img} src={props.userData.img} />
+                        </div>
+                    
+                    :
+                        <div >
+                      
                         </div>
                     }
                 </div>

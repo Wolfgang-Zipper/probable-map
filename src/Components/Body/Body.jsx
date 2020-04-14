@@ -4,7 +4,9 @@ import Posts from './Posts/Posts.js'
 import Avatar from './Avatar/Avatar.js'
 import Info from './Info/Info.js'
 import Friends from '../Friends/Friends.jsx'
+
 const Body = (props) =>{
+ 
   return(
     <div className={s.bod}>
     <div className={s.frend}>
@@ -18,5 +20,6 @@ const Body = (props) =>{
     <Posts  onChangePost={props.onChangePost} addPost={props.addPost} newPostText={props.newPostText}  postDate={props.postDate}/>
     </div>
   )
+  
 };
 export default Body;

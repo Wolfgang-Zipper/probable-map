@@ -1,0 +1,53 @@
+.bod{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 2fr;
+  grid-template-areas:
+  ". . ."
+  ". log ."
+  ". . . ";
+  grid-gap: 5px;
+  grid-area: d;
+
+  background: #c6c9d5;
+  min-height: 800px;
+  text-align: center;
+  margin: 4px 0px;
+  border-radius: 5px;
+}
+.log {
+grid-area: log;
+background: white;
+border-radius: 5px;
+}
+.logc{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "log-b pass-a ";
+  grid-gap: 5px;
+}
+
+.log-button{
+  grid-area: log-b;
+}
+.pasbutton{
+  margin: auto auto;
+  grid-area: pass-a;
+}
+.aler {
+  grid-area: a;
+  background-color: #c6c9d5 !important;
+  border-color: #6c757d;
+  margin: 50px auto;
+  height: max-content;
+  width: max-content;
+}
+.form {
+
+
+  margin: 5% 19%;
+}
+.h4{
+  margin: 35px;
+}

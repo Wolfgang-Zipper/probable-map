@@ -1,35 +1,34 @@
 import React from 'react';
-import s from './Body.module.css'
-import Posts from './Posts/Posts.js'
-import Avatar from './Avatar/Avatar.js'
-import Info from './Info/Info.js'
-import Friends from '../Friends/Friends.jsx'
 import Body from './Body.jsx'
-import {changePostTextActioncreator, addnewPostActioncreator, getPageUserAC} from '../../Redux/body_redusor.js';
+import {changePT, addP, profileThunk, setgetProfileProgress} from '../../Redux/body_redusor.js';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {Preloader} from '../Preloader.jsx'
-import { API_REQ } from '../API/API_REQ';
-
+import { withRedirect } from '../HOC/WithRedirect.jsx'
+import { compose } from 'redux';
 class BodyAPI extends React.Component {
+  
   componentDidMount (){
-    let userId = this.props.match.params.userId;
-    if (!userId) {
-      userId = 2;
-      }
-      API_REQ.getProfile(userId)
-      .then(response => {
-        this.props.getPageUser(response.data);
-      });
+    this.props.setgetProfileProgress(true)
+    this.props.profileThunk(this.props.match.params.userId)
+    this.props.setgetProfileProgress(false)
   }
 
   render() {
+    
+   
     if (this.props.profile){
-    return <Body {...this.props} />
+      if (!this.props.stateProfFetch){
+        return <Body {...this.props} />
+      }
+      else {
+        return <Preloader/>
+      }
   }
   else {
     return <Preloader/>
   }
+
 }
 }
 
@@ -38,28 +37,13 @@ let mapStateToProps = (state) => {
     newPostText: state.body.newPostText,
     postDate: state.body.postDate,
     friendsData: state.body.friendsData,
-    profile: state.body.profile
-
+    profile: state.body.profile,
+    stateProfFetch: state.body.stateProfFetch
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    addPost: () =>{
+export default compose 
+(connect (mapStateToProps, {changePT, addP, profileThunk, setgetProfileProgress}), 
+withRouter, 
+withRedirect) (BodyAPI)
 
-        dispatch(addnewPostActioncreator()); // в этот момент текст из поля по ссылке NewPostElement попадает в функцию addPost которая находится в условном BLL state.js
-    },
-    onChangePost: (text) =>{
-
-      dispatch(changePostTextActioncreator(text));// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
-
-    },
-    getPageUser: (profile) => {
-      dispatch(getPageUserAC(profile));
-    }
-  }
-  
-}
-let GetRouterLoc = withRouter (BodyAPI);
-const BodyContainer = connect (mapStateToProps, mapDispatchToProps)(GetRouterLoc);
-export default BodyContainer;
