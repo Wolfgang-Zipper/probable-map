@@ -4,13 +4,14 @@ import { follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader
 import Users from './Users.jsx'
 import { Preloader } from '../Preloader.jsx'
 import { API_REQ } from '../API/API_REQ';
+import { compose } from 'redux';
 
 class UsersAPI extends React.Component {
 
     componentDidMount() {
 
-        this.props.getUsersThunk(this.props.pageNumber, this.props.userQuantity) //функция умеет включать Прелоадер, делать запрос на сервер для получения пользователей, 
-                                                                                 //передавать юзеров через коллбекфункцию, передавать количество юзеров и отключать прелоадер  
+        this.props.getUsersThunk(this.props.pageNumber, this.props.userQuantity) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, 
+                                                                                 //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  
 
     }
 
@@ -50,7 +51,7 @@ let mapStateToProps = (state) => {
         followProgress: state.Users.followProgress
     }
 }
-
+// СЂРµС„Р°РєС‚РѕСЂРёРЅРі, РІСЃРµ actions РїРµСЂРµРґР°РЅС‹ РІ connect РІ РѕР±РЄРµРєС‚Рµ
 // let mapDispatchToProps = (dispatch) => {
 //   return{
 //     follow: (userID) => {
@@ -73,7 +74,4 @@ let mapStateToProps = (state) => {
 //     }
 //   }
 // }
-
-const UsersContainer = connect(mapStateToProps, { follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader, filterFollowProgress, getUsersThunk, followThunk, unfollowThunk})(UsersAPI);
-
-export default UsersContainer;
+export default compose (connect(mapStateToProps, { follow, unfollow, setUsers, getUsersCount, setCurrentPage, setPreLoader, filterFollowProgress, getUsersThunk, followThunk, unfollowThunk}))(UsersAPI);

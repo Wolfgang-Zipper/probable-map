@@ -8,7 +8,7 @@ import FriendsContainer from './Components/Friends/FriendsContainer.jsx';
 import Grecha from './Components/Grecha/Grecha.jsx';
 import UsersContainer from './Components/Users/UsersContainer.jsx';
 import BodyContainer from './Components/Body/BodyContainer.jsx';
-import Login_page from './Components/Login_page/Login_page.jsx';
+import Login_pageContainer from './Components/Login_page/Login_pageContainer.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -26,7 +26,7 @@ const App = (props) => {
     <Route path="/Users" render={ () => <UsersContainer/>} />
     <Route path="/Friends" render={ () => <FriendsContainer/>} />
     <Route path="/Grecha" render={ () => <Grecha/>} />
-    <Route path="/Login_page" render={ () => <Login_page/>} />
+    <Route path="/Login_page" render={ () => <Login_pageContainer/>} />
     </div>
     </div>
     </div>

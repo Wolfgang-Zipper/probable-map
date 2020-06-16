@@ -1,11 +1,15 @@
-import { API_REQ } from '../Components/API/API_REQ';
+import { profileAPI_REQ, statusAPI_REQ, authAPI_REQ } from '../Components/API/API_REQ';
 import dataSet from "./Data.js"
 const addnewPost = 'addnewPost';
 const changePostText = 'changePostText';
 const getPageUser = 'getPageUser';
 const getProfileProgress = 'getProfileProgress';
+const setLocalStatus = 'setLocalStatus';
+const SessionUserId = 'SessionUserId';
 let iniState = {
   stateProfFetch: false,
+  status: [],
+  sessionUserId: "",
   profile: null,
   friendsData: [
     { id: 1, name: 'Сергей' },
@@ -60,25 +64,76 @@ const body_redusor = (state = iniState, action = iniAction) => {
 
 
   }
+  else if (action.type === setLocalStatus) {
+
+    newState.status = action.status;
+
+
+  }
+  else if (action.type === SessionUserId) {
+
+    newState.sessionUserId = action.userId;
+
+
+  }
   return newState;
 }
-
+export const setSessionUserId = (userId) => ({ type: SessionUserId, userId })
+export const setLocStatus = (status) => ({ type: setLocalStatus, status })
 export const changePT = (text) => ({ type: changePostText, textMessage: text })
 export const getPageU = (profile) => ({ type: getPageUser, profile })
 export const addP = () => ({ type: addnewPost })
 export const setgetProfileProgress = (state) => ({ type: getProfileProgress, state })
-export const profileThunk = (userId) => (dispatch) => {
+export const profileThunk = (userId, sessionUserId) => (dispatch) => {
 
   if (!userId) {
-    userId = 2;
+    userId = sessionUserId
   }
-  API_REQ.getProfile(userId)
+
+  profileAPI_REQ.getProfile(userId)
     .then(response => {
       dispatch(getPageU(response.data))
+      dispatch(setgetProfileProgress(false))
+    })
+    statusAPI_REQ.getStatus(userId)  
+    .then(response => {
+
+      dispatch(setLocStatus(response.data))
+    })
+    authAPI_REQ.getAuth()
+    .then(response => {
+
+
+        dispatch(setSessionUserId(response.data.data.id))
+
+        
+
     });
+}
+export const getAuthThunk = () => (dispatch) => {
+
+ 
+    authAPI_REQ.getAuth()
+    .then(response => {
 
 
+        dispatch(setSessionUserId(response.data.data.id))
+
+        
+
+    });
 }
 
 export default body_redusor;
 
+export const setStatusThunk = (status) => (dispatch) => {
+  
+  statusAPI_REQ.setStatus(status)
+  .then(response => {
+   if (response.data.resultCode === 0) {
+    dispatch(setLocStatus(status))
+  }
+}
+
+  )
+}

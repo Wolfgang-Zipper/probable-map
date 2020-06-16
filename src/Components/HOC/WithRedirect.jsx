@@ -9,6 +9,7 @@ export const withRedirect = (Component) => {
       }
       
     class AuthRedirectComponent extends React.Component {
+      
         render() {
 
         if (this.props.resultCode === 1) return <Redirect  to="/Login_page"/> 

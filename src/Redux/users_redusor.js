@@ -1,4 +1,4 @@
-import { API_REQ } from '../Components/API/API_REQ';
+import { usersAPI_REQ } from '../Components/API/API_REQ';
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
@@ -83,7 +83,7 @@ export const filterFollowProgress = (isFetch, id) => ({ type: FILTER_FOLLOW_PROG
 
 export const getUsersThunk = (pageNumber, userQuantity) => (dispatch) => {
     dispatch(setPreLoader(true))
-    API_REQ.getUsers(pageNumber, userQuantity)
+    usersAPI_REQ.getUsers(pageNumber, userQuantity)
         .then(response => {
             dispatch(setUsers(response.data))
             dispatch(getUsersCount(response.data.totalCount))
@@ -93,7 +93,7 @@ export const getUsersThunk = (pageNumber, userQuantity) => (dispatch) => {
 
 export const followThunk = (userId) => (dispatch) => {
 dispatch(filterFollowProgress(true, userId))
-    API_REQ.postFollow(userId)
+    usersAPI_REQ.postFollow(userId)
     .then(response => {
         if (response.data.resultCode === 0) {
             dispatch(follow(userId));
@@ -104,7 +104,7 @@ dispatch(filterFollowProgress(true, userId))
 
 export const unfollowThunk = (userId) => (dispatch) => {
     dispatch(filterFollowProgress(true, userId))
-    API_REQ.deleteFollow(userId)
+    usersAPI_REQ.deleteFollow(userId)
         .then(response => {
             if (response.data.resultCode === 0) {
                 dispatch(unfollow(userId));

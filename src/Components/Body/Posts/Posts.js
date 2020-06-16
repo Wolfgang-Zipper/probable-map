@@ -9,13 +9,13 @@ const Posts = (props) => {
   let posts = props.postDate.map(post => <Post id={post.id} name={post.name} post_date={post.post_date}
     post_text={post.post_text} like={post.like}/>);
 
-    let NewPostElement = React.createRef();
+    
     let addPostcreate = () => {
 
       props.addPost();// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js
 
     };
-
+    let NewPostElement = React.createRef();
     let onChangePostcreate = () => {
       let text = NewPostElement.current.value;//значение в input
       props.onChangePost(text);// в этот момент текст из поля по ссылке NewPostElement попадает в функцию changeText находящуюся в state.js

@@ -2,9 +2,9 @@ import {withRouter} from 'react-router-dom'
 import React from 'react';
 import Header from './Header.jsx'
 import { connect } from 'react-redux'
-import { getUserData, getresultCode, getImg, getAuthThunk } from '../../Redux/login_redusor.js';
+import { getUserData, getresultCode, getImg, getAuthThunk, logOutThunk } from '../../Redux/login_redusor.js';
 import { compose } from 'redux';
-
+import { withRedirect } from '../HOC/WithRedirect.jsx'
 
 
 class HeaderAPI extends React.Component {
@@ -27,5 +27,5 @@ let mapStateToProps = (state) => {
 }
 
 
-export default compose (connect(mapStateToProps, { getUserData, getresultCode, getImg, getAuthThunk }),
+export default compose (connect(mapStateToProps, { getUserData, getresultCode, getImg, getAuthThunk, logOutThunk }),
 withRouter) (HeaderAPI)

@@ -4,11 +4,15 @@ import body_redusor from './body_redusor';
 import users_redusor from './users_redusor';
 import login_redusor from './login_redusor';
 import ThumkMiddleware from 'redux-thunk'
+import { reducer as formReducer } from 'redux-form'
+
+
 let redusers = combineReducers({
   body: body_redusor,
   Dialogs_main: dialogs_main_redusor,
   Users: users_redusor,
-  Login: login_redusor
+  Login: login_redusor,
+  form: formReducer
 });
 
 let store = createStore(redusers, applyMiddleware(ThumkMiddleware));

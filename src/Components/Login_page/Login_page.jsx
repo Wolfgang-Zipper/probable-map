@@ -1,9 +1,21 @@
 import React from 'react';
 import s from './Login_page.module.css'
+import Login_form from '../Forms/Login_form'
+import { Field, reduxForm } from 'redux-form'
+import { Redirect } from 'react-router-dom';
+const Login_page_ReduxForm = reduxForm({
+  // a unique name for the form
+  form: 'login'
+})(Login_form)
 
-import { BrowserRouter, Route } from 'react-router-dom';
-const Login_page = (props) => {
-
+class Login_page extends React.Component {
+onSubmit = (formData) => {
+  
+  this.props.logInThunk(formData.email, formData.password , formData.check)
+ 
+}
+render (){
+    if (this.props.resultCode === 0) return <Redirect  to="/Body"/>
   return (
 
     <div className={s.bod}>
@@ -14,27 +26,11 @@ const Login_page = (props) => {
 
         Чтобы просматривать эту страницу, нужно зайти на сайт.
         </div>
-        <form className={s.form}>
-          
-          <div className="form-group">
-
-
-            <input placeholder="Email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-
-          </div>
-          <div className="form-group">
-
-            <input placeholder="Пароль" type="password" className="form-control" id="exampleInputPassword1" />
-          </div>
-          <div className={s.logc}>
-            <button type="submit" className="btn btn-secondary log-button">Войти</button>
-            <a className={s.pasbutton} href="" >Забыли пароль ?</a>
-          </div>
-
-        </form>
+        <Login_page_ReduxForm onSubmit={this.onSubmit}/>
       </div>
     </div>
 
   )
+}
 }
 export default Login_page;

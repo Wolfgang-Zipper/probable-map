@@ -21,3 +21,28 @@
   border-top-left-radius: 5px;
 
 }
+.aboutMe{
+  padding: 8px;
+  height: 45px;
+}
+.aboutMe li{
+padding: 2px;
+  }
+.aboutMe li:hover{
+background-color: #bcbfc7;
+}
+
+
+.button_status {
+  width: 27px;
+    padding: 1px 0px;
+    border-radius: 10px;
+    border-style: none;
+} 
+.input {
+  width: 67%;
+  padding: 1px 0px;
+
+  border-style: none;
+  border-radius: 10px;
+}

@@ -50,6 +50,11 @@
   width: 955px;
   height: 536px;
 }
+.btn-group-toggle>.btn, .btn-group-toggle>.btn-group>.btn {
+    margin-bottom: 0;
+    margin: 1px;
+    width: 45px;
+}
 html{
   font-family: Tahoma;
 }
@@ -72,6 +77,9 @@ ul {
   padding: 0px !important;
   margin-left: 32px;
   margin-right: 40px!important;
+}
+.body {
+  font-weight: 100!important;
 }
 .App {
   background-color: #b7bcca;

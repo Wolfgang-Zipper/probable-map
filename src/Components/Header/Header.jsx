@@ -1,9 +1,13 @@
 import React from 'react';
 import s from './Header.module.css'
 import { NavLink } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 const Header = (props) => {
+const logout = () => {
+    props.logOutThunk()
 
+}
     return (
         <div className={s.head}>
 
@@ -45,21 +49,32 @@ const Header = (props) => {
                     <ul className="navbar-nav mr-auto">
 
                     </ul>
-                    
-                    {!(props.location.pathname == "/Login_page") 
-                    ? 
-                        props.userData.resultCode == 1
+
+                    {!(props.location.pathname == "/Login_page")
                         ?
-                        <NavLink className={s.link_inner} to="/Login_page"><li className={s.link}> Войти </li></NavLink>
+                        props.userData.resultCode == 1
+                            ?
+                            <NavLink className={s.link_inner} to="/Login_page"><li className={s.link}> Войти </li></NavLink>
+                            :
+
+                            <div class="dropdown">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div >
+                                        <p className={s.login}>{props.userData.data.login}</p>
+                                        <img className={s.login_img} src={props.userData.img} />
+                                    </div>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    
+                                    <a class="dropdown-item" onClick={logout}  href="#">Выход</a>
+                                </div>
+                            </div>
+
                         :
                         <div >
-                            <p className={s.login}>{props.userData.data.login}</p>
-                            <img className={s.login_img} src={props.userData.img} />
-                        </div>
-                    
-                    :
-                        <div >
-                      
+
                         </div>
                     }
                 </div>
